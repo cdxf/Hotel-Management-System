@@ -23,6 +23,10 @@
   <component name="Encoding">
     <file url="PROJECT" charset="UTF-8" />
   </component>
+  <component name="LaravelPluginSettings">
+    <option name="pluginEnabled" value="true" />
+    <option name="useAutoPopup" value="true" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,6 +56,9 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" default="true" assert-keyword="true" jdk-15="true">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="masterDetails">
     <states>
