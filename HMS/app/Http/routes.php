@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/quanly', 'Director\ManageController@showDashboard')->name('show');
+
+//Route::group(['as' => 'quanly::'], function(){
+//    Route::get('/', 'Director\ManageController@showDashboard')->name('display');
+//});
