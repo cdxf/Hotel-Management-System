@@ -2,44 +2,17 @@
 <html>
     <head>
         <title>Laravel</title>
-
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+		<link href="resources/style.css" rel="stylesheet">
+		<link href="bower_components/metro/build/css/metro.css" rel="stylesheet">
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="node_modules/angular/angular.min.js" ></script>
+		<script src="node_modules/angular-ui-router/build/angular-ui-router.js" ></script>
+		<script src="bower_components/metro/build/js/metro.js"></script>
+		<script src="resources/app.js"></script>
+		<script src="resources/directive.js"></script>
     </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
+    <body ng-app="app">
+	<ng-include src="'resources/masterPage.html'"></ng-include>
     </body>
 </html>
