@@ -7,7 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades;
+use Auth;
 class AuthController extends Controller
 {
     /*
@@ -61,5 +63,19 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function authenticate(Request $request)
+    {
+        //remember to create a user with bcrypt(password) before login. see function create above
+        if($request->isMethod('post')){
+             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication passed...
+            return Redirect::to('layout');
+                    
+             }
+             else {echo "not user"; return "not user";}
+        }
+
+        echo "post not";
     }
 }

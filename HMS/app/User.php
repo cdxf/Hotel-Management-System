@@ -36,4 +36,14 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function addnew(){
+        $t = array(
+            'name' => 'quyen',
+            'email' => 'quyen@2',
+            'password' => bcrypt('123')
+
+        );
+        User::create($t);
+    }
 }

@@ -13,18 +13,18 @@
 
     <title>Template :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
 
-    <link href="{{asset('HMS/resources/assets/css/metro.css')}}" rel="stylesheet">
-    <link href="{{asset('HMS/resources/assets/css/metro-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resource/assets/css/metro-responsive.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resource/assets/css/metro-schemes.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/metro.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/metro-icons.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/metro-responsive.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('assets/css/metro-schemes.min.css')}}" rel="stylesheet"> -->
 
 
-    <script src="{{ asset('HMS/resources/assets/js/jquery-2.1.3.min.js')}}"></script>
-    <script src="{{ asset('HMS/resources/assets/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery-2.1.3.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.dataTables.min.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
-    <script src=" {{ asset('HMS/resources/assets/js/metro.js') }}"></script>
+    <script src=" {{ asset('assets/js/metro.js') }}"></script>
 
     <style>
         html, body {
@@ -96,7 +96,14 @@
                 </li>
             </ul>
         </li>
-        <li><a href="">USER</a></li>
+        <li>
+            <a href="" class="dropdown-toggle">Language</a>
+            <ul class="d-menu" data-role="dropdown">
+                <li><a href="">English</a></li>
+                <li><a href="">Vietnamese</a></li>
+                <li class="divider"></li>
+          </ul>
+        </li>
         <li><a href="">BILL</a></li>
         <li>
             <a href="" class="dropdown-toggle">Help</a>
@@ -116,7 +123,7 @@
             <ul class="unstyled-list fg-dark">
                 <li><a href="" class="fg-white1 fg-hover-yellow">Profile</a></li>
                 <li><a href="" class="fg-white2 fg-hover-yellow">Security</a></li>
-                <li><a href="" class="fg-white3 fg-hover-yellow">Exit</a></li>
+                <li><a href="" class="fg-white3 fg-hover-yellow">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -131,7 +138,7 @@
                         <a href="" class="dropdown-toggle">
                             <span class="mif-apps icon"></span>
                             <span class="title">ROOM</span>
-                            <span class="counter">0</span>
+                            <span class="counter">(0)</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
                             <li><a href="">Room list</a></li>
@@ -145,7 +152,7 @@
                         <a href="" class="dropdown-toggle">
                             <span class="mif-apps icon"></span>
                             <span class="title">USER</span>
-                            <span class="counter">0</span>
+                            <span class="counter">(0)</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
                             <li><a href="">Director list</a></li>
@@ -156,6 +163,16 @@
 
                         </ul>
                     </li>
+                     <li>
+                        <a href="" class="dropdown-toggle">
+                            <span class="mif-apps icon"></span>
+                            <span class="title">GUEST</span>
+                            <span class="counter">(0)</span>
+                        </a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Guest list</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#" class="dropdown-toggle active-toggle">
                             <span class="mif-apps icon"></span>
                             <span class="title">REPORT</span>
@@ -163,8 +180,7 @@
                         </a></li>
                     <li><a href="#">
                             <span class="mif-vpn-publ icon"></span>
-                            <span class="title">BILL</span>
-                            <span class="counter">0</span>
+                            <span class="title">Backup data</span>
                         </a></li>
                     <li class="active"><a href="#">
                             <span class="mif-drive-eta icon"></span>
@@ -186,11 +202,17 @@
                             <span class="title">Automation</span>
                             <span class="counter">0</span>
                         </a></li>
-                    <li><a href="#">
+                    <li>
+                        <a href="" class="dropdown-toggle">
                             <span class="mif-apps icon"></span>
-                            <span class="title">all items</span>
-                            <span class="counter">0</span>
-                        </a></li>
+                            <span class="title">Setting</span>
+                            <span class="counter">(0)</span>
+                        </a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Hotel profile</a></li>
+                            
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
