@@ -75,7 +75,7 @@
 </head>
 <body class="bg-steel">
 <div class="app-bar fixed-top darcula" data-role="appbar">
-    <a class="app-bar-element branding">HOTEL MANAGEMENT SOFTWARE</a>
+    <a class="app-bar-element branding">@yield('siteTitle')</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
         <li><a href="">Dashboard</a></li>
@@ -123,7 +123,7 @@
             <ul class="unstyled-list fg-dark">
                 <li><a href="" class="fg-white1 fg-hover-yellow">Profile</a></li>
                 <li><a href="" class="fg-white2 fg-hover-yellow">Security</a></li>
-                <li><a href="" class="fg-white3 fg-hover-yellow">Logout</a></li>
+                <li><a href="{{ route('logout') }}" class="fg-white3 fg-hover-yellow">Logout</a></li>
             </ul>
         </div>
     </div>

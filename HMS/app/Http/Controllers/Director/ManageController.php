@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Auth;
 class ManageController extends Controller
 {
     public function showDashboard(){
-        return view('director/home');
-    }
-    public function login(){
-
+        if (Auth::check()){
+            return view('director/home');
+        }
+        else{
+            return redirect()->route('login');
+        }
     }
     public function addUser(){
 
