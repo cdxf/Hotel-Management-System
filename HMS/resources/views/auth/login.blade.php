@@ -25,7 +25,7 @@
     <style>
         .login-form {
             width: 25rem;
-            height: 18.75rem;
+            /*height: 18.75rem; */
             position: fixed;
             top: 50%;
             margin-top: -9.375rem;
@@ -58,6 +58,17 @@
         <form method="POST">
             {!! csrf_field() !!}
             <h1 class="text-light">Login to service</h1>
+            @if(count($errors) >0)
+                <hr class="thin"/>
+            <div class="padding10 bg-red fg-white text-accent">
+                <h5>There are some problems with you input:</h5>
+            <div>
+                    @foreach($errors->all() as $error)
+                        <li class="padding10 text-secondary">{{$error}}</li>
+                    @endforeach
+            </div>
+            </div>
+            @endif
             <hr class="thin"/>
             <br />
             <div class="input-control text full-size" data-role="input">

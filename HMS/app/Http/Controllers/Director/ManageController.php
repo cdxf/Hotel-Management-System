@@ -7,13 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use Session;
+use User;
 class ManageController extends Controller
 {
-    public function showDashboard(){
+    public function showDashboard(Request $request){
         if (Auth::check()){
-            return view('director/home');
+            Session::forget('redirect_url');
+            return view('director/home',['user' => Auth::user()]);
         }
         else{
+            Session::put('redirect_url',$request->path());
             return redirect()->route('login');
         }
     }
