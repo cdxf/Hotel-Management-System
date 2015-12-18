@@ -137,6 +137,15 @@
                     <li>
                         <a href="" class="dropdown-toggle">
                             <span class="mif-apps icon"></span>
+                            <span class="title">BOOKING ROOM</span>
+                        </a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Room list</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dropdown-toggle">
+                            <span class="mif-apps icon"></span>
                             <span class="title">ROOM</span>
                             <span class="counter">(0)</span>
                         </a>

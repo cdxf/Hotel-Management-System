@@ -70,10 +70,9 @@ class AuthController extends Controller
         if($request->isMethod('post')){
              if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication passed...
-            return Redirect::to('layout');
-                    
+                return redirect()->route('directorDashboard');
              }
-             else {echo "not user"; return "not user";}
+             else return redirect()->route('login');
         }
 
         echo "post not";

@@ -12,9 +12,6 @@ class ManageController extends Controller
     public function showDashboard(){
         return view('director/home');
     }
-    public function login(){
-
-    }
     public function addUser(){
 
     }
