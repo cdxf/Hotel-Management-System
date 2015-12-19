@@ -66,7 +66,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-<<<<<<< HEAD
+
     public function authenticate(Request $request)
     {
         //remember to create a user with bcrypt(password) before login. see function create above
@@ -80,6 +80,4 @@ class AuthController extends Controller
 
         echo "post not";
     }
-=======
->>>>>>> ac3c727e317a0d64dc81b6fe41e10eedf37d8020
 }
