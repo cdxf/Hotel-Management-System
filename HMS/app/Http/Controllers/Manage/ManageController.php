@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Director;
+namespace App\Http\Controllers\Manage;
 
 use Illuminate\Http\Request;
 
@@ -13,12 +13,16 @@ class ManageController extends Controller
         return view('director/home');
     }
     public function addUser(){
-
+		$data['title'] = 'ADD USER';
+    	return view('director/adduser', $data);
     }
     public function addRoom(){
+    	$data['title'] = 'ADD ROOM';
+    	return view('director/addroom', $data);
 
     }
     public function addRoomType(){
-
+    	$data['title'] = 'ADD ROOM - TYPE';
+    	return view('director/addroomtype', $data);
     }
 }

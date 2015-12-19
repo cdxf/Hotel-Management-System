@@ -24,10 +24,29 @@ Route::post('auth/login', 'Auth\AuthController@authenticate');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
-
-//Route::group(['as' => 'quanly::'], function(){
-//    Route::get('/', 'Director\ManageController@showDashboard')->name('display');
-//});
-Route::group(['namespace'=> 'Director'], function(){
+Route::group(['namespace' => 'Manage'], function(){
     Route::get('/quanly', 'ManageController@showDashboard')->name('directorDashboard');
+    Route::get('/quanly/quyen', 'ManageController@showDashboard')->name('directorDashboard1');
 });
+
+Route::group(['namespace' => 'Manage'], function(){
+
+    Route::group(['prefix' => 'director'], function () {
+	    Route::get('adduser', 'ManageController@addUser')->name('adduser_dir');
+	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_dir');
+	    Route::get('updateuser', 'ManageController@addUser')->name('adduser_dir');
+	    Route::get('updateroom', 'ManageController@addRoom')->name('addroom_dir');
+
+	});
+	
+});
+
+Route::group(['namespace' => 'Receiption'], function(){
+
+ Route::group(['prefix' => 'receiption'], function () {
+
+	  
+	});
+
+});
+
