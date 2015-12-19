@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 /**
 * for common function between manage and reception
 */
-class CommonController extends BaseController
+class CommonController extends Controller
 {
 	public function listRoom(){
 
@@ -14,8 +14,8 @@ class CommonController extends BaseController
 	public function listUser(){
 		//receipt chi duoc xem
 		//manage co quyen xem xoa sua
-		
-		return view('default/listUser');
+		$data['title'] = "MANAGE USER";
+		return view('default/listUser', $data);
 	}
 	public function listGuest(){
 		

@@ -117,7 +117,7 @@
     </ul>
 
     <div class="app-bar-element place-right">
-        <span class="dropdown-toggle"><span class="mif-cog"></span> {{$user->name}}</span>
+        <span class="dropdown-toggle"><span class="mif-cog"></span> Quyen </span>
         <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 220px">
             <h2 class="text-light">Quick settings</h2>
             <ul class="unstyled-list fg-dark">

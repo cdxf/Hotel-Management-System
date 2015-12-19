@@ -25,16 +25,16 @@ class ManageController extends Controller
     }
 
     public function addUser(){
-		$data['title'] = 'ADD USER';
+		$data['title'] = 'MANAGE USER';
     	return view('manage/adduser', $data);
     }
     public function addRoom(){
-    	$data['title'] = 'ADD ROOM';
+    	$data['title'] = 'MANAGE ROOM';
     	return view('manage/addroom', $data);
 
     }
     public function addRoomType(){
-    	$data['title'] = 'ADD ROOM - TYPE';
+    	$data['title'] = 'MANAGE ROOM - TYPE';
     	return view('manage/addroomtype', $data);
     }
 }

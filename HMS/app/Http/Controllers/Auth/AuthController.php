@@ -80,4 +80,4 @@ class AuthController extends Controller
 
         echo "post not";
     }
-}c
+}

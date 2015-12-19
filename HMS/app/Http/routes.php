@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/quanly', ['as' => 'login',function () {
-    return view('auth/login');
-}]);
+// Route::get('/quanly', ['as' => 'login',function () {
+//     return view('auth/login');
+// }]);
 
 
 // Authentication routes...
@@ -26,27 +26,31 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 
 
-Route::group(['namespace' => 'Manage'], function(){
-    Route::get('/quanly', 'ManageController@showDashboard')->name('directorDashboard');
-    Route::get('/quanly/quyen', 'ManageController@showDashboard')->name('directorDashboard1');
-});
+// Route::group(['namespace' => 'Manage'], function(){
+//     Route::get('/quanly', 'ManageController@showDashboard')->name('directorDashboard');
+//     Route::get('/quanly/quyen', 'ManageController@showDashboard')->name('directorDashboard1');
+// });
 
 Route::group(['namespace' => 'Manage'], function(){
-    Route::group(['prefix' => 'director'], function () {
-	    Route::get('adduser', 'ManageController@addUser')->name('adduser_dir');
-	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_dir');
-	    Route::get('updateuser', 'ManageController@addUser')->name('adduser_dir');
-	    Route::get('updateroom', 'ManageController@addRoom')->name('addroom_dir');
-
+    Route::group(['prefix' => 'manage'], function () {
+	    Route::get('adduser', 'ManageController@addUser')->name('adduser_man');
+	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_man');
+	    Route::get('updateuser', 'ManageController@addUser')->name('updateuser_man');
+	    Route::get('updateroom', 'CommonController@addRoom')->name('update_man');
 	});
 	
 });
 
 Route::group(['namespace' => 'Receiption'], function(){
     Route::group(['prefix' => 'receiption'], function () {
-
+    	 Route::get('checkin', 'ManageController@listUser')->name('checkin_rec');
 	  
 	});
 
 });
 
+
+	Route::group(['prefix' => 'quanly'], function () {
+		Route::get('listuser', 'CommonController@listUser')->name('listuser_com');
+		Route::get('listroom', 'CommonController@listRoom')->name('listroom_com'); 
+	});
