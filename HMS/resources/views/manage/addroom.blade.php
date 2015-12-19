@@ -1,8 +1,9 @@
 @extends('layout')
+@section('title')
+{{ $title }}
+@stop
 @section('content')
 
-   <h1 class="text-light">{{ $title }} <span class="mif-drive-eta place-right"></span></h1>
-                <hr class="thin bg-grayLighter">
                 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Create...</button>
                 <button class="button success" onclick="pushMessage('success')"><span class="mif-play"></span> Start</button>
                 <button class="button warning" onclick="pushMessage('warning')"><span class="mif-loop2"></span> Restart</button>

@@ -11,13 +11,12 @@
 
     <link rel='shortcut icon' type='image/x-icon' href='../favicon.ico' />
 
-    <title>Template :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
+    <title>QUAN LI KHACH SAN</title>
 
     <link href="{{asset('assets/css/metro.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/metro-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/metro-responsive.css')}}" rel="stylesheet">
-    <!-- <link href="{{asset('assets/css/metro-schemes.min.css')}}" rel="stylesheet"> -->
-
+    <link href="{{asset('assets/css/mystyle.css')}}" rel="stylesheet">    
 
     <script src="{{ asset('assets/js/jquery-2.1.3.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery.dataTables.min.js')}}"></script>
@@ -75,7 +74,7 @@
 </head>
 <body class="bg-steel">
 <div class="app-bar fixed-top darcula" data-role="appbar">
-    <a class="app-bar-element branding">@yield('siteTitle')</a>
+    <a class="app-bar-element branding">HOTEL MANAGE SYSTEM</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
         <li><a href="">Dashboard</a></li>
@@ -225,6 +224,9 @@
                 </ul>
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
+            <h1 class="text-light"> @yield('title') <span class="mif-drive-eta place-right"></span></h1>
+            <hr class="thin bg-grayLighter">
+           
              @yield('content')
             </div>
         </div>

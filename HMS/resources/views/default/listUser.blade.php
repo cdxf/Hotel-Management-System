@@ -1,7 +1,8 @@
 @extends('layout')
+@section('title')
+{{ $title }}
+@stop
 @section('content')
-
-	<h1 class="text-light">{{ $title }} <span class="mif-drive-eta place-right"></span></h1>
 
 	 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Create...</button>
 	 <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">

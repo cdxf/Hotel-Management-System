@@ -25,7 +25,7 @@ class ManageController extends Controller
     }
 
     public function addUser(){
-		$data['title'] = 'MANAGE USER';
+		$data['title'] = 'ADD USER';
     	return view('manage/adduser', $data);
     }
     public function addRoom(){
