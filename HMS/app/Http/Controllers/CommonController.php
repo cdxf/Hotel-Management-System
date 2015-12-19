@@ -18,7 +18,8 @@ class CommonController extends Controller
 		return view('default/listUser', $data);
 	}
 	public function listGuest(){
-		
+		$data['title'] = "MANAGE GUEST";
+		return view('default/listGuest', $data);
 	}
 	public function roomDeatail(){
 
