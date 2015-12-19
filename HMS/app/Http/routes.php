@@ -12,16 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('hello');
+    return view('welcome');
 });
+
 Route::get('/quanly', ['as' => 'login',function () {
     return view('auth/login');
 }]);
 
+
 // Authentication routes...
-// Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@authenticate');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('login');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 
 
 Route::group(['namespace' => 'Manage'], function(){

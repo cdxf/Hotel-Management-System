@@ -75,7 +75,7 @@
 </head>
 <body class="bg-steel">
 <div class="app-bar fixed-top darcula" data-role="appbar">
-    <a class="app-bar-element branding">HOTEL MANAGEMENT SOFTWARE</a>
+    <a class="app-bar-element branding">@yield('siteTitle')</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
         <li><a href="">Dashboard</a></li>
@@ -117,13 +117,13 @@
     </ul>
 
     <div class="app-bar-element place-right">
-        <span class="dropdown-toggle"><span class="mif-cog"></span> User Name</span>
+        <span class="dropdown-toggle"><span class="mif-cog"></span> {{$user->name}}</span>
         <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 220px">
             <h2 class="text-light">Quick settings</h2>
             <ul class="unstyled-list fg-dark">
                 <li><a href="" class="fg-white1 fg-hover-yellow">Profile</a></li>
                 <li><a href="" class="fg-white2 fg-hover-yellow">Security</a></li>
-                <li><a href="" class="fg-white3 fg-hover-yellow">Logout</a></li>
+                <li><a href="{{ route('logout') }}" class="fg-white3 fg-hover-yellow">Logout</a></li>
             </ul>
         </div>
     </div>

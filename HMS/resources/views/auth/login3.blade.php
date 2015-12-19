@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,20 +13,18 @@
 
     <title>Login form :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
 
+    <link href="assets/css/metro.css" rel="stylesheet">O
+    <link href="assets/css/metro-icons.css" rel="stylesheet">
+    <link href="assets/css/metro-responsive.css" rel="stylesheet">
 
-    <link href="{{asset('HMS/resources/assets/css/metro.css')}}" rel="stylesheet">
-    <link href="{{asset('HMS/resources/assets/css/metro-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resources/assets/css/metro-responsive.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resources/assets/css/metro-schemes.min.css')}}" rel="stylesheet">
-
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/metro.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-
-    <script src=" {{ asset('HMS/resources/assets/js/metro.js') }}"></script>
+ 
     <style>
         .login-form {
             width: 25rem;
-            /*height: 18.75rem; */
+            height: 18.75rem;
             position: fixed;
             top: 50%;
             margin-top: -9.375rem;
@@ -39,6 +38,22 @@
     </style>
 
     <script>
+
+        /*
+        * Do not use this is a google analytics fro Metro UI CSS
+        * */
+        if (window.location.hostname !== 'localhost') {
+
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-58849249-3', 'auto');
+            ga('send', 'pageview');
+
+        }
+
 
         $(function(){
             var form = $(".login-form");
@@ -55,20 +70,9 @@
 </head>
 <body class="bg-darkTeal">
     <div class="login-form padding20 block-shadow">
-        <form method="POST">
-            {!! csrf_field() !!}
+        <form method="post" action="auth/login">
+        {!! csrf_field() !!}
             <h1 class="text-light">Login to service</h1>
-            @if(count($errors) >0)
-                <hr class="thin"/>
-            <div class="padding10 bg-red fg-white text-accent">
-                <h5>There are some problems with you input:</h5>
-            <div>
-                    @foreach($errors->all() as $error)
-                        <li class="padding10 text-secondary">{{$error}}</li>
-                    @endforeach
-            </div>
-            </div>
-            @endif
             <hr class="thin"/>
             <br />
             <div class="input-control text full-size" data-role="input">
@@ -89,7 +93,19 @@
                 <button type="submit" class="button primary">Login to...</button>
                 <button type="button" class="button link">Cancel</button>
             </div>
+                        <!-- Small Checkbox -->
+            <label class="input-control checkbox small-check">
+                <input type="checkbox" checked>
+                <span class="check"></span>
+                <span class="caption">Remember me</span>
+            </label>
         </form>
     </div>
+
+<script>
+$(function(){
+//    jQuery.getScript("//212.90.50.159:3000/js/so_init.js", function(data, textStatus, jqxhr){});
+})
+</script>
 </body>
 </html>
