@@ -12,7 +12,10 @@ class CommonController extends BaseController
 
 	}
 	public function listUser(){
-
+		//receipt chi duoc xem
+		//manage co quyen xem xoa sua
+		
+		return view('default/listUser');
 	}
 	public function listGuest(){
 		

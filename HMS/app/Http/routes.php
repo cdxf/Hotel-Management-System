@@ -32,7 +32,6 @@ Route::group(['namespace' => 'Manage'], function(){
 });
 
 Route::group(['namespace' => 'Manage'], function(){
-
     Route::group(['prefix' => 'director'], function () {
 	    Route::get('adduser', 'ManageController@addUser')->name('adduser_dir');
 	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_dir');
@@ -44,8 +43,7 @@ Route::group(['namespace' => 'Manage'], function(){
 });
 
 Route::group(['namespace' => 'Receiption'], function(){
-
- Route::group(['prefix' => 'receiption'], function () {
+    Route::group(['prefix' => 'receiption'], function () {
 
 	  
 	});

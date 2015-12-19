@@ -15,7 +15,7 @@ class ManageController extends Controller
     public function showDashboard(Request $request){
         if (Auth::check()){
             Session::forget('redirect_url');
-            return view('director/home',['user' => Auth::user()]);
+            return view('manage/home',['user' => Auth::user()]);
         }
         else{
             Session::put('redirect_url',$request->path());
@@ -23,17 +23,18 @@ class ManageController extends Controller
         }
 
     }
+
     public function addUser(){
 		$data['title'] = 'ADD USER';
-    	return view('director/adduser', $data);
+    	return view('manage/adduser', $data);
     }
     public function addRoom(){
     	$data['title'] = 'ADD ROOM';
-    	return view('director/addroom', $data);
+    	return view('manage/addroom', $data);
 
     }
     public function addRoomType(){
     	$data['title'] = 'ADD ROOM - TYPE';
-    	return view('director/addroomtype', $data);
+    	return view('manage/addroomtype', $data);
     }
 }
