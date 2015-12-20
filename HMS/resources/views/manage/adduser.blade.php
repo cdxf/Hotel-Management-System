@@ -4,9 +4,8 @@
 @stop
 @section('content')
 	
-	<button class="button primary" onclick="showDialog('#dialog6')"><span class="mif-plus"></span> Create...</button>
 
-	<form action="" method="post" accept-charset="utf-8" class="adduser">
+	<form action="" method="post" accept-charset="utf-8" class="form-input">
 		<div class="cell">
 			<label class="label-input"> Name </label>
 				<div class="input-control text">
@@ -37,9 +36,14 @@
 		</div>
 		<div class="cell">
 			<label class="label-input"> Role </label>
-				<div class="input-control text">
-		   			 <input type="text">
+				<div class="input-control select">
+				    <select>
+				        <option>1</option>
+				        <option>2</option>
+				        <option>3</option>
+				    </select>
 				</div>
+
 			<label class="label-input"> Email </label>
 				<div class="input-control text">
 		   			 <input type="text">

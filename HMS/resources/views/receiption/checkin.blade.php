@@ -1,10 +1,8 @@
 @extends('layout')
 @section('title')
-{{ $title }}
-@stop
+ @stop
 @section('content')
-
-    <form action="" method="post" accept-charset="utf-8" class="form-input">
+	 <form action="" method="post" accept-charset="utf-8" class="form-input">
         <div class="cell">
             <label class="label-input"> Name </label>
                 <div class="input-control text">
@@ -22,5 +20,5 @@
         <input type="button" class="button warning" name="" value="Cancel">
 
     </form>
-
-    @endsection
+ @stop
+ 

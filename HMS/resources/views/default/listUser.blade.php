@@ -13,30 +13,13 @@
                          <td class="sortable-column">Phone</td>
                         <td class="sortable-column">Role</td>
                         <td class="sortable-column" style="width: 20px">Created_at</td>
-                        <td style="width: 20px">Action</td>
+                        <td style="width: 90px">Action</td>
                     </tr>
                     </thead>
                     <tbody>
+                   
                     <tr>
-                        <td>
-                            <label class="input-control checkbox small-check no-margin">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                        <td>123890723212</td>
-                        <td>Machine number 1</td>
-                        <td><a href="http://virtuals.com/machines/123890723212">link</a></td>
-                        <td class="align-center"><span class="mif-checkmark fg-green"></span></td>
-                        <td>
-                            <label class="switch-original">
-                                <input type="checkbox" checked>
-                                <span class="check"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
+                        <td >
                             <label class="input-control checkbox small-check no-margin">
                                 <input type="checkbox">
                                 <span class="check"></span>
@@ -47,10 +30,8 @@
                         <td><a href="http://virtuals.com/machines/123890723212">link</a></td>
                         <td class="align-center"><span class="mif-stop fg-red"></span></td>
                         <td>
-                            <label class="switch-original">
-                                <input type="checkbox">
-                                <span class="check"></span>
-                            </label>
+                         <a href="" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
+                          <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
                     </tr>
                     </tbody>

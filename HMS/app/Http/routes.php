@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
 	    Route::get('adduser', 'ManageController@addUser')->name('adduser_man');
 	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_man');
+	    Route::get('addroomtype', 'ManageController@addRoomType')->name('addroomtype_man');
 	    Route::get('updateuser', 'ManageController@addUser')->name('updateuser_man');
 	    Route::get('updateroom', 'CommonController@addRoom')->name('update_man');
 	});
@@ -52,5 +53,6 @@ Route::group(['namespace' => 'Receiption'], function(){
 
 	Route::group(['prefix' => 'quanly'], function () {
 		Route::get('listuser', 'CommonController@listUser')->name('listuser_com');
-		Route::get('listroom', 'CommonController@listRoom')->name('listroom_com'); 
+		Route::get('listroom', 'CommonController@listRoom')->name('listroom_com');
+		Route::get('listroombyicon', 'CommonController@listRoomByIcon')->name('listroombyicon_com');  
 	});

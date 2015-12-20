@@ -1,7 +1,8 @@
 @extends('layout')
 @section('title')
-	{{ $title }}
+{{ $title }}
 @stop
 @section('content')
-	
+		
+
 @stop

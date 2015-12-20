@@ -25,6 +25,7 @@ class ManageController extends Controller
     }
 
     public function addUser(){
+        //mat khau se tu render - sau do nguoi dung dang nhap va doi mat khau
 		$data['title'] = 'ADD USER';
     	return view('manage/adduser', $data);
     }
@@ -36,5 +37,8 @@ class ManageController extends Controller
     public function addRoomType(){
     	$data['title'] = 'MANAGE ROOM - TYPE';
     	return view('manage/addroomtype', $data);
+    }
+    public function updateRoomType(){
+        
     }
 }
