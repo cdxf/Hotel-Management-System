@@ -9,21 +9,15 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function listUser()
     {
-        //
-    }
+        //list all user
+        //receipt chi duoc xem
+        //manage co quyen xem xoa sua
+        $data['title'] = "MANAGE USER";
+        return view('default/listUser', $data);
+    } 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //create new user

@@ -14,16 +14,16 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function listRoom(){
+       $data['title'] = 'Manage Room';
+        return view('default/listRoom', $data);
     }
+    public function listRoomByIcon(){
+        // hien thi danh sach phong bang icon
+        $data['title'] = 'List Room By Icon';
+        return view('default/listRoomByIcon', $data);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    }
     public function create()
     {
         //add new room
