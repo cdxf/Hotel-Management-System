@@ -9,16 +9,11 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+   
+    public function bookingRoom(){
+        $data['title'] = "Make reservation";
+        return view('receiption/bookingroom',$data);
     }
-
     /**
      * Show the form for creating a new resource.
      *

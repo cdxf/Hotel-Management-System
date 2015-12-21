@@ -72,7 +72,7 @@
         })
     </script>
 </head>
-<body class="bg-steel">
+<body class="bg-steel" >
 <div class="app-bar fixed-top darcula" data-role="appbar">
     <a class="app-bar-element branding">HOTEL MANAGE SYSTEM</a>
     <span class="app-bar-divider"></span>

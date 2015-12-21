@@ -35,15 +35,11 @@
 				</div>
 		</div>
 		<div class="cell">
-			<label class="label-input"> Role </label>
-				<div class="input-control select">
-				    <select>
-				        <option>1</option>
-				        <option>2</option>
-				        <option>3</option>
-				    </select>
+		 <label class="label-input"> Phone</label>
+				<div class="input-control text">
+		   			 <input type="text">
 				</div>
-
+			
 			<label class="label-input"> Email </label>
 				<div class="input-control text">
 		   			 <input type="text">

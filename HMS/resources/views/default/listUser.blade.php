@@ -5,8 +5,8 @@
 @section('content')
 
  {{-- area to list all user--}}
- <a href="{{ redirect()->route('adduser_man')}}"> dfd </a>
-	 <button class="button primary" onclick=""><span class="mif-plus"></span> Create...</button>
+ <a href="/manage/adduser"> dfd </a>
+	 <button class="button primary" onclick="{{ asset('adduser_man') }}"><span class="mif-plus"></span> Create...</button>
 	 <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
@@ -106,6 +106,7 @@
                  </div>
 
                 <input type="submit" class="button primary" name="" value="Save">
+                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogedituser')" >
             </form>
 
             </p>
@@ -117,6 +118,12 @@
             function showDialog(id){
                 var dialog = $(id).data('dialog');
                 dialog.open();
+                return false;
+            }
+
+            function closeDialog(id){
+                 var dialog = $(id).data('dialog');
+                dialog.close();
                 return false;
             }
         </script>

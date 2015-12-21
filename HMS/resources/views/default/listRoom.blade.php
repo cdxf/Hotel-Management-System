@@ -13,7 +13,7 @@
                     <thead>
                     <tr>                      
                         <td class="sortable-column sort-asc" style="width: 100px">Room</td>
-                        <td class="sortable-column">Room Type</td>
+                        <td class="sortable-column">RoomType</td>
                          <td class="sortable-column">Decription</td>
                         <td style="width: 90px">Action</td>
                     </tr>

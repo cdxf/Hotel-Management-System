@@ -41,11 +41,9 @@ Route::group(['namespace' => 'Manage'], function(){
 
 	    Route::get('updateuser', 'UserController@updateuser')->name('updateuser_man');
 	    Route::get('updateroom', 'RoomController@updateRoom')->name('update_man');
+
+	    Route::get('bookingroom', 'ServiceController@bookingRoom')->name('bookingroom_rec');
 	});
 	
 });
 
-
-	Route::group(['prefix' => 'quanly'], function () {
-	
-	});
