@@ -26,15 +26,16 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        //add new room
+        $data['title'] = 'MANAGE ROOM';
+        return view('manage/addroom', $data);
+    }
+    public function createRoomType(){
+        $data['title'] = 'MANAGE ROOM - TYPE';
+        return view('manage/addroomtype', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
         //
@@ -71,7 +72,8 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update a room
+        
     }
 
     /**

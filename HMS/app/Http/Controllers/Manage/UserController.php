@@ -26,7 +26,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //create new user
+        //mat khau se tu render - sau do nguoi dung dang nhap va doi mat khau
+        $data['title'] = 'ADD USER';
+        return view('manage/adduser', $data);
     }
 
     /**

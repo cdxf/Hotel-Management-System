@@ -26,18 +26,14 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 
 
-// Route::group(['namespace' => 'Manage'], function(){
-//     Route::get('/quanly', 'ManageController@showDashboard')->name('directorDashboard');
-//     Route::get('/quanly/quyen', 'ManageController@showDashboard')->name('directorDashboard1');
-// });
-
 Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
-	    Route::get('adduser', 'ManageController@addUser')->name('adduser_man');
-	    Route::get('addroom', 'ManageController@addRoom')->name('addroom_man');
-	    Route::get('addroomtype', 'ManageController@addRoomType')->name('addroomtype_man');
-	    Route::get('updateuser', 'ManageController@addUser')->name('updateuser_man');
-	    Route::get('updateroom', 'CommonController@addRoom')->name('update_man');
+	    Route::get('adduser', 'UserController@create')->name('adduser_man');
+	    Route::get('addroom', 'RoomController@create')->name('addroom_man');
+	    Route::get('addroomtype', 'RoomController@createRoomType')->name('addroomtype_man');
+
+	    Route::get('updateuser', 'UserController@updateuser')->name('updateuser_man');
+	    Route::get('updateroom', 'RoomController@updateRoom')->name('update_man');
 	});
 	
 });
