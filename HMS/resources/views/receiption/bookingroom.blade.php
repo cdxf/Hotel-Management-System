@@ -98,9 +98,9 @@
 		   			 <input type="text">
 				</div>
 		</div>
-		<input type="submit" class="button primary" name="" value="Save">
-		<input type="button" class="button warning" name="" value="Cancel">
-
+		<input type="submit" class="button primary" name="" value="Booking">
+		<input type="button" class="button warning" name="" value="Checkin">
+		<input type="button" class="button success" name="" value="Checkout">
 	</form>
 	
 

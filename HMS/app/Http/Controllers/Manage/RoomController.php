@@ -20,7 +20,7 @@ class RoomController extends Controller
     }
     public function listRoomByIcon(){
         // hien thi danh sach phong bang icon
-        $data['title'] = 'List Room By Icon';
+        $data['title'] = 'Room Preview';
         return view('default/listRoomByIcon', $data);
 
     }
