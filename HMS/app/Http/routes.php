@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::controller('/', 'Auth\AuthController');
 
 // Route::get('/quanly', ['as' => 'login',function () {
 //     return view('auth/login');
@@ -21,13 +22,16 @@ Route::get('/', function () {
 
 
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin')->name('login');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('login_get');
+Route::post('auth/login', 'Auth\AuthController@postLogin')->name('login_post');
 Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
+
 
 
 Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
+
+
 
 	    Route::get('listuser', 'UserController@listUser')->name('listuser_com');
 		Route::get('listroom', 'RoomController@listRoom')->name('listroom_com');

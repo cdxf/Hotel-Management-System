@@ -9,6 +9,9 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
    
     public function bookingRoom(){
         $data['title'] = "Make reservation";

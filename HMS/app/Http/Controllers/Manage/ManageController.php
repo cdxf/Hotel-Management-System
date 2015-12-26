@@ -19,9 +19,20 @@ class ManageController extends Controller
         }
         else{
             Session::put('redirect_url',$request->path());
-            return redirect()->route('login');
+            return redirect()->route('login3');
         }
 
+    }
+    public function login(Request $request){
+        //lay data tu input check xem co trong csdl khong
+        
+        // Session::push('user.name', );
+        // Session::put('user.role', );
+        return view('auth/login');
+
+    }
+    public function loggout(){
+      return $this->auth->logout;
     }
     
 }

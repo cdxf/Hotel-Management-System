@@ -13,15 +13,15 @@
     <title>Login form :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
 
 
-    <link href="{{asset('HMS/resources/assets/css/metro.css')}}" rel="stylesheet">
-    <link href="{{asset('HMS/resources/assets/css/metro-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resources/assets/css/metro-responsive.css')}}" rel="stylesheet">
-    <link href="{{ asset('HMS/resources/assets/css/metro-schemes.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/metro.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/metro-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/metro-responsive.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/metro-schemes.min.css')}}" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
-    <script src=" {{ asset('HMS/resources/assets/js/metro.js') }}"></script>
+    <script src=" {{ asset('assets/js/metro.js') }}"></script>
     <style>
         .login-form {
             width: 25rem;
@@ -55,7 +55,9 @@
 </head>
 <body class="bg-darkTeal">
     <div class="login-form padding20 block-shadow">
-        <form method="POST">
+        {{-- <form method="POST" action="{{ asset('auth/login') }}"> --}}
+        <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
+
             {!! csrf_field() !!}
             <h1 class="text-light">Login to service</h1>
             @if(count($errors) >0)
@@ -87,8 +89,14 @@
             <br />
             <div class="form-actions">
                 <button type="submit" class="button primary">Login to...</button>
-                <button type="button" class="button link">Cancel</button>
+                <button type="button" class="button link">Foget Password ?</button>
             </div>
+             <!-- Small Checkbox -->
+            <label class="input-control checkbox small-check">
+                <input type="checkbox" checked>
+                <span class="check"></span>
+                <span class="caption">Remember me</span>
+            </label>
         </form>
     </div>
 </body>

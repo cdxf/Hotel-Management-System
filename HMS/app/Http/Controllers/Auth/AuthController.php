@@ -23,7 +23,7 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
-    protected $redirectPath = '';
+    protected $redirectPath = '/manage/bookingroom';
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
@@ -66,18 +66,17 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    // protected $loginPath = 'auth/login';
 
-    public function authenticate(Request $request)
-    {
-        //remember to create a user with bcrypt(password) before login. see function create above
-        if($request->isMethod('post')){
-             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed...
-                return redirect()->route('directorDashboard');
-             }
-             else return redirect()->route('login');
-        }
-
-        echo "post not";
-    }
+    // protected function getLogin(){
+    //     return view('auth/login');
+    // }
+    // protected function postLogin(Request $request){
+    //     $user_mail = $request->input('email');
+    //     $user_password = $request->input('password');
+    //     return $user_mail;
+    // }
+    // protected function getLogout(){
+    //     $this->auth->logout();
+    // }
 }

@@ -13,7 +13,7 @@
 
     <title>Login form :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style</title>
 
-    <link href="assets/css/metro.css" rel="stylesheet">O
+    <link href="assets/css/metro.css" rel="stylesheet">
     <link href="assets/css/metro-icons.css" rel="stylesheet">
     <link href="assets/css/metro-responsive.css" rel="stylesheet">
 
