@@ -116,7 +116,12 @@
     </ul>
 
     <div class="app-bar-element place-right">
-        <span class="dropdown-toggle"><span class="mif-cog"></span> Quyen </span>
+        <span class="dropdown-toggle"><span class="mif-cog"></span>
+        
+         {{{ isset(Auth::user()->email) ?  Auth::user()->email : "Quyen" }}}
+
+
+          </span>
         <div class="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style="width: 220px">
             <h2 class="text-light">Quick settings</h2>
             <ul class="unstyled-list fg-dark">
@@ -163,12 +168,7 @@
                             <span class="counter">(0)</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Director list</a></li>
-                            <li><a href="">Reception list</a></li>
-                            <li><a href="">Add director</a></li>
-                            <li><a href="">Add reception</a></li>
-                            <li><a href="">fdfd</a></li>
-
+                            <li><a href="{{ route('listuser_com') }}">User list</a></li>
                         </ul>
                     </li>
                      <li>

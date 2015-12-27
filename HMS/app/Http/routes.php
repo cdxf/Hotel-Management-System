@@ -32,7 +32,6 @@ Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
 
 
-
 	    Route::get('listuser', 'UserController@listUser')->name('listuser_com');
 		Route::get('listroom', 'RoomController@listRoom')->name('listroom_com');
 		Route::get('listroomtype', 'RoomController@listRoomType')->name('listroomtype_com');

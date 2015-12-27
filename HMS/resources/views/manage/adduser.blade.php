@@ -46,6 +46,7 @@
 				</div>
 		</div>
 		<div class="cell">
+			<label class="label-input"> Sex</label>
 			<label class="input-control radio small-check">
                     <input type="radio" name="n3" checked="">
                       <span class="check"></span>
@@ -56,6 +57,13 @@
                       <span class="check"></span>
                     <span class="caption">Female</span>
             </label>
+            <label class="label-input"> Role </label>
+				<div class="input-control select">
+				    <select>
+				        <option>Director</option>
+				        <option>Receiption</option>				        
+				    </select>
+				</div>
            
            
 		</div>

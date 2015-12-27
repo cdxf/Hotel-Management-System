@@ -5,8 +5,8 @@
 @section('content')
 
  {{-- area to list all user--}}
- <a href="/manage/adduser"> dfd </a>
-	 <button class="button primary" onclick="{{ asset('adduser_man') }}"><span class="mif-plus"></span> Create...</button>
+ 
+	 <a href="{{ route('adduser_man') }}"><button class="button primary"><span class="mif-plus"></span> Add user...</button></a>
 	 <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
