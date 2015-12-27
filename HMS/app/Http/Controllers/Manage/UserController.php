@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use User;
+use Role;
 
 class UserController extends Controller
 {
@@ -15,6 +17,7 @@ class UserController extends Controller
         //receipt chi duoc xem
         //manage co quyen xem xoa sua
         $data['title'] = "MANAGE USER";
+        $data['role_table'] = Role::getAll();
         return view('default/listUser', $data);
     } 
 
