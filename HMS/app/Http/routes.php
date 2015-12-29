@@ -38,8 +38,10 @@ Route::group(['namespace' => 'Manage'], function(){
 
 		Route::get('listroombyicon', 'RoomController@listRoomByIcon')->name('listroombyicon_com');  
 
-	    Route::get('adduser', 'UserController@create')->name('adduser_man');
-	    Route::get('addroom', 'RoomController@create')->name('addroom_man');
+	    Route::get('adduser', 'UserController@addUser')->name('adduser_man');
+	    Route::post('adduser', 'UserController@addUserPost')->name('adduser_man_post');
+
+	    Route::get('addroom', 'RoomController@addRoom')->name('addroom_man');
 	    
 
 	    Route::get('updateuser', 'UserController@updateuser')->name('updateuser_man');

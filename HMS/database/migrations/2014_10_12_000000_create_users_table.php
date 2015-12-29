@@ -18,16 +18,16 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->tinyInteger('role');  //0: receiption  1: director
-             $table->tinyInteger('sex');   //0: nu      1: nam
+            $table->tinyInteger('sex');   //0: nu      1: nam
             $table->string('phone', 60);
             $table->string('address',60);
             $table->date('birthday');
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('role')
-                  ->references('id')->on('role')
-                  ->onDelete('cascade');
+            // $table->foreign('role')
+            //       ->references('id')->on('role')
+            //       ->onDelete('cascade');
         });
     }
 

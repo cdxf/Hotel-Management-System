@@ -24,6 +24,7 @@ class AuthController extends Controller
     |
     */
     protected $redirectPath = 'manage/bookingroom';
+    //this is redirect when click back button
     
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;

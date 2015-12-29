@@ -22,24 +22,35 @@
                     </tr>
                     </thead>
                     <tbody>
-                   
-                    <tr>
+                    @foreach ($user as $ur)
+                      <tr>
                         <td >
-                           1
+                           {{ $ur->id }}
                         </td>
-                        <td>Cao Van Quyen</td>
-                        <td>016734343434</td>
-                        <td> Manager </td>
-                        <td> 12/12/2014 </td>
-                        <td> quan 8 </td>
-                        <td> Nam </td>
-                        <td class="align-center"><span class="mif-stop fg-red"></span></td>
+                        <td>{{ $ur->name }}</td>
+                        <td>{{ $ur->phone }}</td>
+                        <td> @if ($ur->role == 1)
+                            Director
+                            @elseif ($ur->role ==0 )
+                              receiption
+                          
+                        @endif </td>
+                        <td> {{ $ur->birthday }} </td>
+                        <td> {{ $ur->address }} </td>
+                        <td> @if ( $ur->sex == '0' )
+                          Male
+                          @elseif ($ur->sex == '1') 
+                            Female
+                        @endif </td>
+                        <td> {{ $ur->created_at }}</td>
+
                         <td>
                         <a href="" style="margin-right: 10px;"> <span class="mif-user" title="detail"></span> </a>
                          <a href="javascript:;" onclick="showDialog('#dialogedituser')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
                     </tr>
+                    @endforeach                    
                     </tbody>
                 </table>
 
@@ -52,17 +63,17 @@
                 <div class="cell">
                     <label class="label-input"> Name</label>
                         <div class="input-control text">
-                             <input type="text">
+                             <input type="text" value="{{ $ur->name }}">
                         </div>
                     <label class="label-input"> Phone </label>
                         <div class="input-control text">
-                             <input type="text">
+                             <input type="text" value="{{ $ur->phone }}">
                         </div>                   
                 </div> 
                 <div class="cell">
                     <label class="label-input"> Birthday </label>
                         <div class="input-control text" data-role="datepicker" >
-                            <input type="text" id='date-p'>
+                            <input type="text" id='date-p' value="{{ $ur->birthday }}">
                             <button class="button"><span class="mif-calendar"></span></button>
                         </div>
                         <script>
@@ -70,7 +81,7 @@
                                 $("#datepicker").datepicker();
 
                             });
-                              document.getElementById('date-p').value = (new Date()).format("yyyy.mm.dd");
+                              document.getElementById('date-p').value =  {{{ $ur->birthday }}};
                         </script>       
                           <label class="label-input"> Role </label>
                             <div class="input-control select">
@@ -85,7 +96,7 @@
                  <div class="cell">
                      <label class="label-input"> Email </label>
                         <div class="input-control text">
-                             <input type="text">
+                             <input type="text" value="{{ $ur->birthday }}">
                         </div>
                     <label class="label-input"> Address </label>
                     <div class="input-control text">
@@ -93,6 +104,7 @@
                     </div>
                  </div>
                  <div class="cell">
+                    <label class="label-input"> Sex</label>
                      <label class="input-control radio small-check">
                     <input type="radio" name="n3" checked="">
                       <span class="check"></span>
