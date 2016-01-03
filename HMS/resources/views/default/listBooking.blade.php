@@ -4,18 +4,20 @@
 @stop
 
 @section('content')
-	{{-- area to add new room type --}}
 	 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Create...</button>
-	 <a href="{{ route('listroombyicon_com') }}"><button type="button" class="button link">Booking Room</button></a> 
+	 
 	 
 	 <hr class="thin bg-grayLighter">
-	{{-- area to list room type --}}
+	{{-- area to list booking --}}
 	<table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
                         <td class="sortable-column sort-asc" style="width: 100px">ID</td>
-                        <td class="sortable-column">RoomType</td>
-                         <td class="sortable-column">Decription</td>
+                        <td class="sortable-column">Guest</td>
+                         <td class="sortable-column">Checkin</td>
+                         <td class="sortable-column">Checkout</td>
+                         <td class="sortable-column">Satus</td>                         
+                         <td class="sortable-column">Receiption</td> 
                         <td style="width: 90px">Action</td>
                     </tr>
                     </thead>
@@ -23,8 +25,12 @@
                    
                     <tr>
                         <td >  1  </td>
-                        <td>Vip </td>
-                        <td>Danh cho khach vip</td>                     
+                        <td>QUyne </td>
+                        <td>12/1/12</td>      
+                        <td>12/1/12</td>      
+                        <td>chua thanh toan</td>      
+                        <td>huyen xinh dep</td>      
+						
                         <td>
                          <a href="javascript:;" onclick="showDialog('#dialog')" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 

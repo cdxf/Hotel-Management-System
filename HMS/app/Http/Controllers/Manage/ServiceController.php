@@ -17,6 +17,10 @@ class ServiceController extends Controller
         $data['title'] = "Make reservation";
         return view('receiption/bookingroom',$data);
     }
+    public function listBooking(){
+         $data['title'] = "LIST BOOKING";
+         return view('default/listBooking',$data);
+    }
     /**
      * Show the form for creating a new resource.
      *

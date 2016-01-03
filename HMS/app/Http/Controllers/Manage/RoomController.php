@@ -18,6 +18,10 @@ class RoomController extends Controller
        $data['title'] = 'Manage Room';
         return view('default/listRoom', $data);
     }
+    public function listRoomType(){
+        $data['title'] = 'Manage Room Type';
+        return view('default/listRoomType', $data);
+    }
     public function listRoomByIcon(){
         // hien thi danh sach phong bang icon
         $data['title'] = 'Room Preview';

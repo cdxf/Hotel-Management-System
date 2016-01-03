@@ -39,6 +39,9 @@ class UserController extends Controller
         $data['user'] = User::all();
         return view('default/listUser',$data);
     }
+    public function updateUser(){
+        
+    }
     /**
      * Store a newly created resource in storage.
      *

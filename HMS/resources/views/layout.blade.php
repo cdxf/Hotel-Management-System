@@ -141,10 +141,11 @@
                     <li>
                         <a href="" class="dropdown-toggle">
                             <span class="mif-apps icon"></span>
-                            <span class="title">BOOKING ROOM</span>
+                            <span class="title">RESERVATION</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Room list</a></li>
+                            <li><a href="{{ route('listroombyicon_com') }}">Booking Room</a></li>
+                            <li><a href="{{ route('listbooking_com') }}">List Booking</a></li>
                         </ul>
                     </li>
                     <li>
@@ -154,8 +155,8 @@
                             <span class="counter">(0)</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Room list</a></li>
-                            <li><a href="">Room-type list</a></li>
+                            <li><a href="{{ route('listroom_com') }}">Room list</a></li>
+                            <li><a href="{{ route('listroomtype_com') }}">Room-type list</a></li>
                             <li><a href="">Add room</a></li>
                             <li><a href="">Add room-type</a></li>
 

@@ -46,34 +46,38 @@
 
                         <td>
                         <a href="" style="margin-right: 10px;"> <span class="mif-user" title="detail"></span> </a>
-                         <a href="javascript:;" onclick="showDialog('#dialogedituser')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
+                         <a href="javascript:;" onclick="showDialog('#dialogedituser{{ $ur->id }}')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
                     </tr>
-                    @endforeach                    
-                    </tbody>
-                </table>
 
-         {{-- area to display modal window edit user--}}
-         <div data-role="dialog" id="dialogedituser" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
+
+
+                          {{-- area to display modal window edit user--}}
+         <div data-role="dialog" id="dialogedituser{{ $ur->id }}" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
             <div class="container">
                  <h1>Edit User</h1>
             <p>
                <form action="" method="post" accept-charset="utf-8" class="form-input">
+               
+                 <div class="cell">
+                    <label class="label-input"> ID :</label>
+                        <label class="label-input">   {{ $ur->id }}</label>                                                        
+                   </div> 
                 <div class="cell">
                     <label class="label-input"> Name</label>
                         <div class="input-control text">
-                             <input type="text" value="{{ $ur->name }}">
+                             <input type="text"  name="name" value="{{ $ur->name }}">
                         </div>
                     <label class="label-input"> Phone </label>
                         <div class="input-control text">
-                             <input type="text" value="{{ $ur->phone }}">
+                             <input type="text" name="phone" value="{{ $ur->phone }}">
                         </div>                   
                 </div> 
                 <div class="cell">
                     <label class="label-input"> Birthday </label>
                         <div class="input-control text" data-role="datepicker" >
-                            <input type="text" id='date-p' value="{{ $ur->birthday }}">
+                            <input type="text" id='date-p' name="birthday" value="{{ $ur->birthday }}">
                             <button class="button"><span class="mif-calendar"></span></button>
                         </div>
                         <script>
@@ -96,7 +100,7 @@
                  <div class="cell">
                      <label class="label-input"> Email </label>
                         <div class="input-control text">
-                             <input type="text" value="{{ $ur->birthday }}">
+                             <input type="text" value="{{ $ur->email }}">
                         </div>
                     <label class="label-input"> Address </label>
                     <div class="input-control text">
@@ -139,5 +143,13 @@
                 return false;
             }
         </script>
+                    {{-- end -- area to display modal window edit user--}}
+                    {{-- every foreach create a ID for dialog which is special for one user ID so we can call it when click--}}
+
+                    @endforeach                    
+                    </tbody>
+                </table>
+
+ 
 
 @stop
