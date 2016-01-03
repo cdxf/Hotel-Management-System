@@ -6,14 +6,13 @@
 @section('content')
 	{{-- area to add new room type --}}
 	 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Create...</button>
-	 <a href="{{ route('listroombyicon_com') }}"><button type="button" class="button link">Booking Room</button></a> 
 	 
 	 <hr class="thin bg-grayLighter">
 	{{-- area to list room type --}}
 	<table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
-                        <td class="sortable-column sort-asc" style="width: 100px">ID</td>
+                        <td class="sortable-column sort-asc" style="width: 100px">Room</td>
                         <td class="sortable-column">RoomType</td>
                          <td class="sortable-column">Decription</td>
                         <td style="width: 90px">Action</td>
@@ -24,7 +23,7 @@
                     <tr>
                         <td >  1  </td>
                         <td>Vip </td>
-                        <td>Danh cho khach vip</td>                     
+                        <td>Danh cho doi voi so nguoi it</td>                     
                         <td>
                          <a href="javascript:;" onclick="showDialog('#dialog')" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 

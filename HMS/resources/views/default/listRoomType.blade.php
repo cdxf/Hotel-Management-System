@@ -5,9 +5,7 @@
 
 @section('content')
 	{{-- area to add new room type --}}
-	 <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Add Room Type...</button>
-	 <a href="{{ route('listroombyicon_com') }}"><button type="button" class="button link">View Icon Mode</button></a> 
-	 
+	 <a href="{{ route('listroombyicon_com') }}"> <button class="button primary"><span class="mif-plus"></span> Add Room Type...</button></a>  
 	 <hr class="thin bg-grayLighter">
 	{{-- area to list room type --}}
 	<table class="dataTable border bordered" data-role="datatable" data-auto-width="false">

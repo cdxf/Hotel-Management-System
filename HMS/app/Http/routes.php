@@ -36,6 +36,7 @@ Route::group(['namespace' => 'Manage'], function(){
 		Route::get('listroom', 'RoomController@listRoom')->name('listroom_com');
 		Route::get('listroomtype', 'RoomController@listRoomType')->name('listroomtype_com');
 		Route::get('listbooking', 'ServiceController@listBooking')->name('listbooking_com');
+		Route::match(array('GET', 'POST'), 'addroomtype', 'RoomController@createRoomType')->name('addroomtype_man');
 
 		Route::get('listroombyicon', 'RoomController@listRoomByIcon')->name('listroombyicon_com');  
 

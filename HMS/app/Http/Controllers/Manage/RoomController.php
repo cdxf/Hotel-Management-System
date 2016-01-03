@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\RoomType;
 class RoomController extends Controller
 {
     /**
@@ -20,6 +20,7 @@ class RoomController extends Controller
     }
     public function listRoomType(){
         $data['title'] = 'Manage Room Type';
+        $data['room_type'] = RoomType::all();
         return view('default/listRoomType', $data);
     }
     public function listRoomByIcon(){
@@ -28,13 +29,13 @@ class RoomController extends Controller
         return view('default/listRoomByIcon', $data);
 
     }
-    public function create()
+    public function create(Request $request)
     {
         //add new room
         $data['title'] = 'MANAGE ROOM';
         return view('manage/addroom', $data);
     }
-    public function createRoomType(){
+    public function createRoomType(Request $request){
         $data['title'] = 'MANAGE ROOM - TYPE';
         return view('manage/addroomtype', $data);
     }
