@@ -6,7 +6,7 @@
 
  {{-- area to list all user--}}
  
-	 <a href="{{ route('addroom_man') }}"><button class="button primary"><span class="mif-plus"></span> Add room...</button></a>
+	 <a href="javascript:;" onclick="showDialog('#dialogaddroom')"><button class="button primary"><span class="mif-plus"></span> Add room...</button></a>
 	 <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
@@ -48,7 +48,7 @@
 
 
 
-                          {{-- area to display modal window edit user--}}
+                          {{-- area to display modal window edit room--}}
          <div data-role="dialog" id="dialogedituser{{ $r->id }}" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
             <div class="container">
                  <h1>Edit Room</h1>
@@ -72,9 +72,9 @@
                 <div class="cell">
                     <label class="label-input"> Description </label>
                         <div class="input-control text">
-                             <input type="text" name="phone" value="{{ $r->desc }}">
+                             <input type="text" name="desc" value="{{ $r->desc }}">
                         </div> 
-                     <label class="label-input">  </label>
+                     <label class="label-input"> RoomType </label>
                             <div class="input-control select">
                                     <select>
                                         <option>1</option>
@@ -87,7 +87,7 @@
                  
                 
                 <input type="submit" class="button primary" name="" value="Save">
-                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogedituser')" >
+                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogedituser{{ $r->id }}')" >
             </form>
 
             </p>
@@ -95,23 +95,73 @@
             </div>
            
         </div>
-        <script>
-            function showDialog(id){
-                var dialog = $(id).data('dialog');
-                dialog.open();
-                return false;
-            }
-
-            function closeDialog(id){
-                 var dialog = $(id).data('dialog');
-                dialog.close();
-                return false;
-            }
-        </script>
+       
                     {{-- end -- area to display modal window edit user--}}
                     {{-- every foreach create a ID for dialog which is special for one user ID so we can call it when click--}}
 
-                    @endforeach                    
+                    @endforeach     
+                    {{-- area for addroom modal --}}
+		 <div data-role="dialog" id="dialogaddroom" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
+            <div class="container">
+                 <h1>Add New Room</h1>
+            <p>
+               <form action="{{ action('Manage\RoomController@addRoom') }}" method="post" accept-charset="utf-8" class="form-input">
+                {!! csrf_field() !!}
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                <div class="cell">
+                    <label class="label-input"> Name</label>
+                        <div class="input-control text">
+                             <input type="text"  name="name">
+                        </div>
+                    <label class="label-input"> Phone </label>
+                        <div class="input-control text">
+                             <input type="text" name="phone">
+                        </div>                   
+                </div> 
+                <div class="cell">
+                    <label class="label-input"> Description </label>
+                        <div class="input-control text">
+                             <input type="text" name="desc">
+                        </div> 
+                        <label class="label-input"> Room Type </label>
+                            <div class="input-control select">
+                                    <select name='room_type_id'>
+                                        @foreach ($room_type as $type)
+				    					<option value="{{ $type->id }}">{{ $type->name }}</option>
+				    					@endforeach
+                                    </select>   
+                          </div>
+                     
+                              
+                 </div>
+                 
+                
+                <input type="submit" class="button primary" name="" value="Save">
+                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogaddroom')" >
+            </form>
+
+            </p>
+
+            </div>
+           
+        </div>
+
+
+
+                    {{-- area for addroom modal --}}
+			         <script>
+			            function showDialog(id){
+			                var dialog = $(id).data('dialog');
+			                dialog.open();
+			                return false;
+			            }
+
+			            function closeDialog(id){
+			                 var dialog = $(id).data('dialog');
+			                dialog.close();
+			                return false;
+			            }
+			        </script>               
                     </tbody>
                 </table>
 

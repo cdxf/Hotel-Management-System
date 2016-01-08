@@ -41,7 +41,7 @@
 		   <label class="label-input"> Role </label>
 				<div class="input-control select">
 				    <select>
-				    	@@foreach ($role_table as $r)
+				    	@foreach ($role_table as $r)
 				    		<option value="{{ $r->id }}">{{ $r->name }}</option>
 				    	@endforeach
 				        				        

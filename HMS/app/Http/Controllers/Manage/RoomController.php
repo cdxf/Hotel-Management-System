@@ -18,6 +18,7 @@ class RoomController extends Controller
     public function listRoom(){
 
         $data['title'] = 'MANAGE ROOM';
+        $data['room_type'] = RoomType::all();
         $data['room'] = Room::all();
         return view('default/listRoom', $data);
     }
