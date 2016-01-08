@@ -13,9 +13,12 @@ class ServiceController extends Controller
         $this->middleware('auth');
     }
    
-    public function bookingRoom(){
+    public function bookingRoom(Request $request){
         $data['title'] = "Make reservation";
-        return view('receiption/bookingroom',$data);
+        if ($request->isMethod('post')) {
+            
+        } else
+            return view('receiption/bookingroom',$data);
     }
     public function listBooking(){
          $data['title'] = "LIST BOOKING";
