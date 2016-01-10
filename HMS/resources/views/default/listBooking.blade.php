@@ -13,8 +13,12 @@
                     <thead>
                     <tr>                      
                         <td class="sortable-column sort-asc" style="width: 100px">ID</td>
-                        <td class="sortable-column">Guest</td>
-                         <td class="sortable-column">Checkin</td>
+                        <td class="sortable-column">GuestID</td>
+                         <td class="sortable-column">Room</td>
+                          <td class="sortable-column">Child_Number</td>
+                           <td class="sortable-column">Adult_Number</td>
+                            <td class="sortable-column">Deposit</td>
+                         <td class="sortable-column">Created_at</td>
                          <td class="sortable-column">Checkout</td>
                          <td class="sortable-column">Satus</td>                         
                          <td class="sortable-column">Receiption</td> 
@@ -22,20 +26,25 @@
                     </tr>
                     </thead>
                     <tbody>
-                   
-                    <tr>
-                        <td >  1  </td>
-                        <td>QUyne </td>
-                        <td>12/1/12</td>      
-                        <td>12/1/12</td>      
-                        <td>chua thanh toan</td>      
-                        <td>huyen xinh dep</td>      
-						
+                    @foreach ($booking as $b)
+                        <tr>
+                        <td >  {{ $b->id }} </td>
+                        <td> {{ $b->guest_id }}</td>
+                        <td>{{ $b->room_name }}</td>      
+                        <td>{{ $b->child_number }}</td>      
+                        <td>{{ $b->adult_number }}</td>      
+                        <td>{{ $b->deposit }}</td>
+                        <td>{{ $b->created_at }}</td>     
+						<td>{{ $b->checkout }}</td>  
+						<td>{{ $b->receiption }}</td> 
+						<td>fix later</td>  
                         <td>
                          <a href="javascript:;" onclick="showDialog('#dialog')" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
-                    </tr>
+                    </tr> 
+                    @endforeach
+                    
                     </tbody>
                 </table>
 

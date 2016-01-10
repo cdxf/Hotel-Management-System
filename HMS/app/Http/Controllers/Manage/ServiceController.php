@@ -41,6 +41,7 @@ class ServiceController extends Controller
     }
     public function listBooking(){
          $data['title'] = "LIST BOOKING";
+         $data['booking'] = Booking::all();
          return view('default/listBooking',$data);
     }
     /**

@@ -6,7 +6,7 @@
 
  {{-- area to list all user--}}
  
-	 <a href=""><button class="button primary"><span class="mif-plus"></span> Add user...</button></a>
+	 
 	 <table class="dataTable border bordered" data-role="datatable" data-auto-width="false">
                     <thead>
                     <tr>                      
@@ -14,8 +14,8 @@
                         <td class="sortable-column" style="width: 50px">Name</td>
                          <td class="sortable-column" style="width: 50px">Identify</td>
                         <td class="sortable-column" style="width: 20px">Nationality</td>
-                        <td class="sortable-column" style="width: 20px" >Email</td>
                         <td class="sortable-column" style="width: 20px" >Phone</td>
+                        <td class="sortable-column" style="width: 20px" >Email</td>
                         <td class="sortable-column" style="width: 20px">Address</td>
                         <td class="sortable-column" style="width: 20px">Sex</td>
                         <td class="sortable-column" style="width: 20px">Created_at</td>

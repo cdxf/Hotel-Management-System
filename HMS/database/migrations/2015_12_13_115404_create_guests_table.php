@@ -27,6 +27,7 @@ class CreateGuestsTable extends Migration
 			*/
 			$table->tinyInteger('sex');
 			$table->string('email')->unique()->nullable();
+            $table->string('receiption');
             $table->timestamps();
 			//index
         });
