@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
-
+use App\Guest;
+use App\Booking;
 class ServiceController extends Controller
 {
     public function __construct(){
@@ -22,8 +23,21 @@ class ServiceController extends Controller
     }
     public function bookingRoomPost(Request $request){
         $data['title'] = "Make reservation";
+        //save to guest table
+        $guest = new Guest;
+        $guest = $request->all();
+        $guest_id = Guest::create($guest);
+       
+        //save to booking table
+        $booking = new Booking;
+        $booking = $request->all();     
+        $booking['guest_id'] = $guest_id->id;
+        Booking::create($booking);
+
+        //update status room
         
-            return view('receiption/bookingroom',$data);
+        
+             return redirect()->route('listbooking_com');
     }
     public function listBooking(){
          $data['title'] = "LIST BOOKING";

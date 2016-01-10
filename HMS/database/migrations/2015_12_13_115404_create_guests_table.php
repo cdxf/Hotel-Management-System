@@ -16,7 +16,7 @@ class CreateGuestsTable extends Migration
             $table->increments('id');
 			$table->string('name');
 			//National Identity Number
-			$table->string('identify');
+			$table->string('identify')->unique();
             $table->string('nationality');
 			$table->string('address')->nullable();
 			$table->string('phone')->nullable();
