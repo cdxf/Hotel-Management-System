@@ -5,32 +5,23 @@
 @section('content')
 
 
-<h3 class="text-light"> Guest Detail<span class="mif-drive-eta place-right"></span></h3>
+
 		<form action="" method="post" accept-charset="utf-8" class="form-input">
+			
+		<h3 class="text-light" style="color: blue"><b> Guest Detail </b><span class="mif-drive-eta place-right"></span></h3>
+		<hr class="thin bg-grayLighter">
+
 		<div class="cell">
 			<label class="label-input"> Name </label>
 				<div class="input-control text">
 		   			 <input type="text">
 				</div>
-			<label class="label-input"> Room </label>
-				<div class="input-control text">
-		   			 <input type="text" value="{{ $nameroom }}" readonly>
-				</div>
-		</div>
-		<div class="cell">
-		<div class="cell">
-			<label class="label-input"> Address </label>
+			<label class="label-input"> Email </label>
 				<div class="input-control text">
 		   			 <input type="text">
 				</div>
-			<label class="label-input"> RoomType </label>
-				<div class="input-control select">
-				    <select>
-				        <option>1</option>
-				        <option>2</option>
-				        <option>3</option>
-				    </select>
-				</div>		</div>
+		</div>
+		<div class="cell">		
 		<div class="cell">
 			<label class="label-input"> ID Card </label>
 				<div class="input-control text">
@@ -45,6 +36,36 @@
 				    </select>
 				</div>
 		</div>
+		<div class="cell">
+		 <label class="label-input"> Address </label>
+				<div class="input-control text">
+		   			 <input type="text">
+				</div> 
+		<label class="label-input"> Phone </label>
+		     <div class="input-control text">
+		    	<input type="text">
+				</div>          
+		</div>
+
+		<div class="cell">
+			<label class="label-input"> Sex </label>
+			<label class="input-control radio small-check">
+                    <input type="radio" name="n3" checked="">
+                      <span class="check"></span>
+                    <span class="caption">Male</span>
+            </label>
+            <label class="input-control radio small-check">
+                    <input type="radio" name="n3" checked="">
+                      <span class="check"></span>
+                    <span class="caption">Female</span>
+            </label>
+
+           
+           
+		</div>
+	<hr class="thin bg-grayLighter">
+	<h3 class="text-light" style="color: blue"><b> Booking Detail </b><span class="mif-drive-eta place-right"></span></h3>
+    <hr class="thin bg-grayLighter">
 		<div class="cell">
 			<label class="label-input"> Checkin </label>
 				<div class="input-control text" data-role="datepicker" >
@@ -67,9 +88,9 @@
 				</script>
 		</div>
 		<div class="cell">
-			<label class="label-input"> Total </label>
+			<label class="label-input"> Room </label>
 				<div class="input-control text">
-		   			 <input type="text">
+		   			 <input type="text" value="{{ $nameroom }}" readonly>
 				</div>
 			<label class="label-input"> Deposit </label>
 				<div class="input-control text">
@@ -77,20 +98,22 @@
 				</div>
 		</div>
 		<div class="cell">
-			<label class="label-input"> Sex </label>
-			<label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
-                      <span class="check"></span>
-                    <span class="caption">Male</span>
-            </label>
-            <label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
-                      <span class="check"></span>
-                    <span class="caption">Female</span>
-            </label>
-           
-           
+			<label class="label-input"> Adult Number </label>
+				<div class="input-control text">
+		   			 <input type="text">
+				</div>
+			<label class="label-input"> Child Number </label>
+				<div class="input-control text">
+		   			 <input type="text">
+				</div>
 		</div>
+		<div class="cell">
+			<label class="label-input"> Total </label>
+				<div class="input-control text">
+		   			 <input type="text">
+				</div>
+			
+		</div>	
 		<div class="cell">
 			<label class="label-input"> Reception Name </label>
 				<div class="input-control text">

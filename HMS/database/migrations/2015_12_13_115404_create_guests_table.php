@@ -14,10 +14,10 @@ class CreateGuestsTable extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('first_name');
-			$table->string('last_name');
+			$table->string('name');
 			//National Identity Number
-			$table->string('nin');
+			$table->string('identify');
+            $table->string('nationality');
 			$table->string('address')->nullable();
 			$table->string('phone')->nullable();
 			/* ISO/IEC 5218

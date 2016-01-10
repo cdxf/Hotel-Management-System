@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class ServiceController extends Controller
 {
@@ -16,6 +17,7 @@ class ServiceController extends Controller
     public function bookingRoomGet($name){
         $data['title'] = "Make reservation";
         $data['nameroom'] = $name;
+        $data['receiption'] = User::where('role', '0')->get(); //0: receiption  1: director
             return view('receiption/bookingroom',$data);
     }
     public function bookingRoomPost(Request $request){
