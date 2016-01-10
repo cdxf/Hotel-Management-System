@@ -14,11 +14,11 @@
                         <td class="sortable-column" style="width: 50px">Name</td>
                          <td class="sortable-column" style="width: 50px">Phone</td>
                         <td class="sortable-column" style="width: 20px">Role</td>
-                        <td class="sortable-column" style="width: 20px" >Birthday</td>
+                        <td class="sortable-column" style="width: 20px" >Email</td>
                         <td class="sortable-column" style="width: 20px">Address</td>
                         <td class="sortable-column" style="width: 20px">Sex</td>
                         <td class="sortable-column" style="width: 20px">Created_at</td>
-                        <td style="width: 90px">Action</td>
+                        <td style="width: 110px">Action</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,7 +35,7 @@
                               receiption
                           
                         @endif </td>
-                        <td> {{ $ur->birthday }} </td>
+                        <td> {{ $ur->email }} </td>
                         <td> {{ $ur->address }} </td>
                         <td> @if ( $ur->sex == '1')
                           Male
@@ -45,7 +45,8 @@
                         <td> {{ $ur->created_at }}</td>
 
                         <td>
-                        <a href="" style="margin-right: 10px;"> <span class="mif-user" title="detail"></span> </a>
+                       <a href="" style="margin-right: 10px;"> <span class="mif-security" title="Change Password"></span> </a>
+                        <a href="" style="margin-right: 10px;"> <span class="mif-user" title="User detail"></span> </a>
                          <a href="javascript:;" onclick="showDialog('#dialogedituser{{ $ur->id }}')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>

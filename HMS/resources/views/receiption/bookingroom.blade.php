@@ -115,9 +115,9 @@
 			
 		</div>	
 		<div class="cell">
-			<label class="label-input"> Reception Name </label>
+			<label class="label-input">Receiption Name</label>
 				<div class="input-control text">
-		   			 <input type="text">
+		   			 <input type="text" value="{{ Auth::user()->name }}" readonly>
 				</div>
 		</div>
 		<input type="submit" class="button primary" name="" value="Booking">
