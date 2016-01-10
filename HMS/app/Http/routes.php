@@ -31,7 +31,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
 
-
+    	Route::get('listguest', 'GuestController@listGuest')->name('listguest_com');
 	    Route::get('listuser', 'UserController@listUser')->name('listuser_com');
 		Route::get('listroom', 'RoomController@listRoom')->name('listroom_com');
 		Route::get('listroomtype', 'RoomController@listRoomType')->name('listroomtype_com');

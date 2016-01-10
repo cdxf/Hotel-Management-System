@@ -179,7 +179,7 @@
                             <span class="counter">(0)</span>
                         </a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Guest list</a></li>
+                            <li><a href="{{ route('listguest_com') }}">Guest list</a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="dropdown-toggle active-toggle">
