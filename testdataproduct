@@ -1,0 +1,80 @@
+-- Adminer 4.2.3 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `sort` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `target` varchar(255) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `category` (`sort`, `id`, `name`, `target`, `parent_id`) VALUES
+(2,	1,	'Kính thời trang',	'kinh-thoi-trang',	0),
+(3,	2,	'Áo tắm',	'ao-tam',	0),
+(3,	3,	'Giày thể thao',	'giay-the-thao',	0),
+(3,	4,	'T-SHIRT',	'T-SHIRT',	0),
+(3,	5,	'Trang sức',	'trang suc',	0),
+(0,	6,	'Ao Thun',	'Ao-thun',	1),
+(0,	7,	'Áo trong suốt',	'ao-trong-suot',	2);
+
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `target` varchar(255) NOT NULL,
+  `listtag` text,
+  `viewed` int(11) NOT NULL,
+  `category` int(11) NOT NULL,
+  `vote` int(11) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `sale` int(11) NOT NULL,
+  `id_supplied` int(11) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `content_short` text NOT NULL,
+  `sold` int(11) NOT NULL,
+  `images` text NOT NULL,
+  `active` varchar(45) NOT NULL,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `fk_Product_1_idx` (`category`),
+  KEY `fk_Product_2_idx` (`id_supplied`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `product` (`id`, `name`, `target`, `listtag`, `viewed`, `category`, `vote`, `price`, `sale`, `id_supplied`, `color`, `size`, `content`, `content_short`, `sold`, `images`, `active`, `updated`) VALUES
+(1,	'Giày adias',	'giay-adias',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	0,	3,	0,	'12.000',	0,	2,	'[\"1\"]',	'[\"x\",\"XL\"]',	'   craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events.   ',	'   Đây là loại tốt nhất thị trường   ',	19,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(3,	'Kính râm',	'kinh-ram',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	23,	1,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	0,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(4,	'Kính cận',	'kinh-can',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	0,	1,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	0,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(5,	'Giày thái lan',	'giay-thai-lan',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	0,	3,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	23,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(6,	'Giày an do',	'giay-an-do',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	21,	3,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	4,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(7,	'Giày viet nam',	'giay-viet-nam',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	0,	6,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	0,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39'),
+(8,	'ao thu so 1',	'ao-thun-so-1',	'[\"n\",\"nsdsd\",\"\\u0111\\u1ed3ng h\\u1ed3\"]',	3,	7,	0,	'12.000',	12,	1,	'[\"1\"]',	'[\"x\",\"XL\"]',	' craigslist provides local classifieds and forums for jobs, housing, for sale, personals, services, local community, and events. ',	' Đây là loại tốt nhất thị trường ',	9,	'[\"\\/upload\\/6.jpg\",\"\\/upload\\/9.jpg\",\"\\/upload\\/issu.png\",\"\\/upload\\/issu.png\"]',	'1',	'2015-12-16 06:35:39');
+
+
+
+
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE `supplier` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `target` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `supplier` (`id`, `name`, `target`) VALUES
+(1,	'adias',	'adias'),
+(2,	'puma',	'puma'),
+(3,	'Gucci',	'Gucci');
+
+
+
+-- 2015-12-17 14:47:24

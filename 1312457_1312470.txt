@@ -1,0 +1,7 @@
+- Nhóm 2 sinh viên: 
++ 1312457: Huỳnh Duy Nhật Quang
++ 1312470: Cao Văn Quyền
+
+- Đề tài quản lí khách sạn
+Nhóm em gửi thầy link github của đồ án
+https://github.com/snoobvn/Hotel-Management-System

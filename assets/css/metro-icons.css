@@ -260,7 +260,10 @@
   background: #6d8764 !important;
 }
 .bg-steel {
-  background: #647687 !important;
+  /*background: #647687 !important;*/
+  background: white !important; 
+  /*quyenvinhxuan da sua*/
+
 }
 .bg-mauve {
   background: #76608a !important;

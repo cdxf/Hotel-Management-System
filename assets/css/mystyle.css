@@ -1,0 +1,34 @@
+.modal{
+	background:rgba(0,0,0,0.75);
+}
+.cell{
+    margin-bottom: 20px;
+
+}
+.label-input{
+	display: inline-block;
+	margin-right: 20px;
+	width: 70px;
+}
+.input-control{
+	margin-right: 50px;
+}
+.form-input{
+	padding: 30px;
+}
+.fixed {
+	position: fixed; 
+	top: 0; 
+	height: 70px; 
+	z-index: 1;
+}
+.my-cell{
+	display: block;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 20%;
+    float: left;
+    
+}
+.clear {clear: both;}
+
