@@ -30,8 +30,7 @@
 				        <option>2</option>
 				        <option>3</option>
 				    </select>
-				</div>
-		</div>
+				</div>		</div>
 		<div class="cell">
 			<label class="label-input"> ID Card </label>
 				<div class="input-control text">

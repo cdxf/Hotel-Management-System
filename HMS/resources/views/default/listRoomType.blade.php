@@ -39,7 +39,9 @@
 		       <form action="" method="post" accept-charset="utf-8" class="form-input">
 		        <div class="cell">
 		        <label class="label-input"> ID </label>		                
-					 <label class="label-input">   {{ $type->id }}</label>	           
+					<div class="input-control text">
+		                     <input type="text" value="{{ $type->id }}" readonly>
+		                </div>    
 		            <label class="label-input"> NameType </label>
 		                <div class="input-control text">
 		                     <input type="text" name='name' value="{{ $type->name }}">
@@ -56,7 +58,7 @@
 		                </div> 
 		        </div> 
 		        <input type="submit" class="button primary" name="" value="Save">
-		        <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogedituser{{ $type->id}}')" >
+		        <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialog{{ $type->id}}')" >
     		</form>
 
 		    </p>
@@ -112,6 +114,11 @@
 		        dialog.open();
 		        return false;
 		    }
+		     function closeDialog(id){
+			                 var dialog = $(id).data('dialog');
+			                dialog.close();
+			                return false;
+			 }
 		</script>
 	
 @stop

@@ -157,8 +157,8 @@
                         <ul class="d-menu" data-role="dropdown">
                             <li><a href="{{ route('listroom_com') }}">Room list</a></li>
                             <li><a href="{{ route('listroomtype_com') }}">Room-type list</a></li>
-                            <li><a href="">Add room</a></li>
-                            <li><a href="">Add room-type</a></li>
+                            <li><a href="{{  route('listroom_com') }}">Add room</a></li>
+                            <li><a href="{{ route('listroomtype_com') }}">Add room-type</a></li>
 
                         </ul>
                     </li>

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 
          $this->call(UserTableSeeder::class);
          $this->call(RoleTableSeeder::class);
+         $this->call(RoomTypeTableSeeder::class);
 
         Model::reguard();
     }

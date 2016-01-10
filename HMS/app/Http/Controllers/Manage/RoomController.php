@@ -31,6 +31,7 @@ class RoomController extends Controller
         // hien thi danh sach phong bang icon
         $data['title'] = 'Room Preview';
         $data['room'] = Room::all();
+        $data['room_type'] = RoomType::all();
         return view('default/listRoomByIcon', $data);
 
     }

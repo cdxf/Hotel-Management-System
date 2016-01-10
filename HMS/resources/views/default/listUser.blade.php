@@ -37,9 +37,9 @@
                         @endif </td>
                         <td> {{ $ur->birthday }} </td>
                         <td> {{ $ur->address }} </td>
-                        <td> @if ( $ur->sex == '0' )
+                        <td> @if ( $ur->sex == '1')
                           Male
-                          @elseif ($ur->sex == '1') 
+                          @elseif ($ur->sex == '0')
                             Female
                         @endif </td>
                         <td> {{ $ur->created_at }}</td>
