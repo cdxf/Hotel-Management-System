@@ -14,7 +14,7 @@
 				</div>
 			<label class="label-input"> Room </label>
 				<div class="input-control text">
-		   			 <input type="text">
+		   			 <input type="text" value="{{ $nameroom }}" readonly>
 				</div>
 		</div>
 		<div class="cell">

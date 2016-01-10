@@ -17,7 +17,8 @@ class CreateRoomTypesTable extends Migration
 			$table->string('name')->unique();
             $table->double('price');
 			$table->string('desc',4000);
-        });
+            $table->timestamps();
+  });
     }
 
     /**

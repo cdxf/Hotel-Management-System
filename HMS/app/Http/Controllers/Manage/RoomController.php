@@ -30,6 +30,7 @@ class RoomController extends Controller
     public function listRoomByIcon(){
         // hien thi danh sach phong bang icon
         $data['title'] = 'Room Preview';
+        $data['room'] = Room::all();
         return view('default/listRoomByIcon', $data);
 
     }
@@ -41,9 +42,11 @@ class RoomController extends Controller
             Room::create($room);   
             return redirect()->route('listroom_com');
     }
-    public function createRoomType(Request $request){
-        $data['title'] = 'MANAGE ROOM - TYPE';
-        return view('manage/addroomtype', $data);
+    public function addRoomType(Request $request){
+            $roomtype = new RoomType;
+            $roomtype = $request->all();
+            RoomType::create($roomtype);
+            return redirect()->route('listroomtype_com');     
     }
 
    

@@ -6,10 +6,10 @@
  *        
  */
 
-===================
-- Tao mot class de voi phuong thuc construct co middleware auth de moi route deu phai co authentication
+==========================================
+ Tao mot class de voi phuong thuc construct co middleware auth de moi route deu phai co authentication
 
-====================
+==========================================
 /**
  * 				Với database seeding
  * 				- Muốn seeding cho từng bảng  thì chạy lệnh
@@ -31,4 +31,14 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-==========================
+============================================
+// truyen bien vao route
+ {{ route('bookingroom_rec_get',$r->id) }}
+ //cach khac la dung link truc tiep
+ <a href="booking/name"> </a>
+
+================================================
+/**
+ *      lam cho the input khong the chinh sua ma chi xem
+ *     <input type="text" name="country" value="Norway" readonly><br>
+ */

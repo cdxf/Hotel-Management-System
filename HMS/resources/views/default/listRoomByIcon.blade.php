@@ -6,87 +6,23 @@
 
        <h3 class="text-light"> Floor 1 <span class="mif-drive-eta place-right"></span></h3>
        <hr class="thin bg-grayLighter">
-   
-    <div class="my-cell">
+   @foreach ($room as $r)
+   	 <div class="my-cell">
        	<div class="panel">
 			<div class="heading">
 		        <span class="icon mif-home"></span>
-			     <span class="title">ROOM 120</span>
+			     <span class="title">ROOM {{ $r->name }}</span>
 		    </div>
 		    <div class="content padding10">
 		        Guest: Cao van quyen<br>
 		        Status: booked<br>
 		        Checkin: not<br>
-		        <button class="button small-button primary">BOOK</button>
+		       <a href="{{ route('bookingroom_rec_get',$r->name) }}"><button class="button small-button primary">BOOK</button> </a> 
 		    </div>
-
-
 		</div>
        </div>
-         <div class="my-cell">
-       	<div class="panel">
-			<div class="heading">
-		        <span class="icon mif-home"></span>
-			     <span class="title">ROOM 120</span>
-		    </div>
-		    <div class="content padding10">
-		      Guest: Cao van quyen<br>
-		        Status: booked<br>
-		        Checkin: not<br>
-		    </div>
-
-
-		</div>
-       </div>
-       <div class="my-cell">
-       	<div class="panel warning">
-			<div class="heading">
-		        <span class="icon mif-home"></span>
-			     <span class="title">ROOM 120</span>
-		    </div>
-		    <div class="content padding10">
-		      Guest: Cao van quyen<br>
-		        Status: booked<br>
-		        Checkin: not<br>
-		    </div>
-
-
-		</div>
-       </div>
-       <div class="my-cell">
-       	<div class="panel">
-			<div class="heading">
-		        <span class="icon mif-home"></span>
-			     <span class="title">ROOM 120</span>
-		    </div>
-		    <div class="content padding10">
-		       Guest: Cao van quyen<br>
-		        Status: booked<br>
-		        Checkin: not<br>
-		    </div>
-
-
-		</div>
-       </div>
-       <div class="my-cell">
-       <div class="panel">
-			<div class="heading">
-		        <span class="icon mif-home"></span>
-			     <span class="title">ROOM 120</span>
-		    </div>
-		    <div class="content padding10">
-		      Guest: Cao van quyen<br>
-		        Status: booked<br>
-		        Checkin: not<br>
-		    </div>
-
-
-		</div>
-       </div>
-
-         
-         
-         
+   @endforeach
+   
    
     
 		<script>

@@ -12,6 +12,7 @@
                     <tr>                      
                         <td style="width: 15px">ID</td>
                         <td class="sortable-column" style="width: 50px">NameRoom</td>
+                        <td class="sortable-column" style="width: 50px">RoomType</td>
                          <td class="sortable-column" style="width: 50px">Phone</td>
                         <td class="sortable-column" style="width: 20px">Description</td>
                         <td class="sortable-column" style="width: 20px" >Status</td>                  
@@ -26,6 +27,13 @@
                            {{ $r->id }}
                         </td>
                         <td>{{ $r->name }}</td>
+                        <td>
+                          @foreach ($room_type as $r_t)
+                             @if ($r_t->id == $r->room_type_id)
+                               {{ $r_t->name }}
+                             @endif
+                          @endforeach
+                        </td>
                         <td>{{ $r->phone }}</td>
                         <td> {{ $r->desc }} </td>
                         <td> 
@@ -77,9 +85,14 @@
                      <label class="label-input"> RoomType </label>
                             <div class="input-control select">
                                     <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                    @foreach ($room_type as $r_type)
+                                        @if ($r_type->id == $r->room_type_id)
+                                           <option selected> {{ $r_type->name }} </option>
+                                             @else
+                                             <option> {{ $r_type->name }} </option>
+
+                                        @endif
+                                    @endforeach     
                                     </select>   
                           </div>
                               
