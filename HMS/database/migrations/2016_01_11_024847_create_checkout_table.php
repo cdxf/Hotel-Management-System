@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBookingTable extends Migration
+class CreateCheckoutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,15 @@ class CreateBookingTable extends Migration
      */
     public function up()
     {
-         Schema::create('booking', function (Blueprint $table) {
+         Schema::create('checkout', function (Blueprint $table) {
+
             $table->increments('id');
             $table->integer('guest_id');
-            $table->string('room_name');
-            $table->integer('child_number');
-            $table->integer('adult_number');
-            $table->double('deposit');
+            $table->string('room_name');        
+            $table->double('service_price');
+            $table->double('total');
             $table->string('receiption');
-            $table->timestamp('checkout');
+            $table->timestamp('booking_time');
             $table->timestamps();
         });
     }

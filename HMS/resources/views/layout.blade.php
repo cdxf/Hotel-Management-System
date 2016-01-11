@@ -146,6 +146,7 @@
                         <ul class="d-menu" data-role="dropdown">
                             <li><a href="{{ route('listroombyicon_com') }}">Booking Room</a></li>
                             <li><a href="{{ route('listbooking_com') }}">List Booking</a></li>
+                             <li><a href="{{ route('checkout_rec') }}"> Checkout</a></li>
                         </ul>
                     </li>
                     <li>
@@ -170,6 +171,7 @@
                         </a>
                         <ul class="d-menu" data-role="dropdown">
                             <li><a href="{{ route('listuser_com') }}">User list</a></li>
+                             <li><a href="{{ route('adduser_man') }}">Add user</a></li>
                         </ul>
                     </li>
                      <li>

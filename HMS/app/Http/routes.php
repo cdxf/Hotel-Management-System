@@ -40,7 +40,7 @@ Route::group(['namespace' => 'Manage'], function(){
 		Route::get('listroombyicon', 'RoomController@listRoomByIcon')->name('listroombyicon_com');  
 
 	    Route::get('adduser', 'UserController@addUser')->name('adduser_man');
-	    Route::post('adduser', 'UserController@addUserPost')->name('adduser_man_post');
+	    Route::post('adduser', 'UserController@addUserPost')->name('O');
 
 	    Route::post('addroom', 'RoomController@addRoom')->name('addroom_man');
 	    Route::post('addroomtype', 'RoomController@addRoomType')->name('addroomtype_man');
@@ -53,6 +53,8 @@ Route::group(['namespace' => 'Manage'], function(){
 	    Route::get('listbooking', 'ServiceController@listBooking')->name('listbooking_com');
 	    Route::get('bookingroom/{name}', 'ServiceController@bookingRoomGet')->name('bookingroom_rec_get');
 	    Route::post('bookingroom', 'ServiceController@bookingRoomPost')->name('bookingroom_rec_post');
+
+	    Route::get('checkout', 'ServiceController@checkout')->name('checkout_rec');
 
 	});
 	

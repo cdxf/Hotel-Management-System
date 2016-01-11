@@ -19,7 +19,12 @@
 					        Guest: Cao van quyen<br>
 					        Status: booked<br>
 					        Checkin: not<br>
-					       <a href="{{ route('bookingroom_rec_get',$r->name) }}"><button class="button small-button primary">BOOK</button> </a> 
+					        @if ($r->status == 'N')
+					        	<a href="{{ route('bookingroom_rec_get',$r->name) }}"><button class="button small-button warning">CHECKOUT</button> </a> 
+					        	@elseif($r->status == 'A')
+					        	 <a href="{{ route('bookingroom_rec_get',$r->name) }}"><button class="button small-button primary">BOOK</button> </a> 
+					        @endif
+					      
 					    </div>
 					</div>
 			       </div>

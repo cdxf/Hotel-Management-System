@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Guest;
 use App\Booking;
+use App\Room;
 class ServiceController extends Controller
 {
     public function __construct(){
@@ -35,7 +36,7 @@ class ServiceController extends Controller
         Booking::create($booking);
 
         //update status room
-        
+        Room::where('name', $booking['room_name'])->update(array('status'=> 'N'));
         
              return redirect()->route('listbooking_com');
     }
