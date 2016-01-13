@@ -48,7 +48,7 @@
                        <a href="" style="margin-right: 10px;"> <span class="mif-security" title="Change Password"></span> </a>
                         <a href="" style="margin-right: 10px;"> <span class="mif-user" title="User detail"></span> </a>
                          <a href="javascript:;" onclick="showDialog('#dialogedituser{{ $ur->id }}')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
-                          <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
+                          <a href="{{ route('deleteuser_man', $ur->id) }}" onclick="return confirm('are you sure delete this ?')"> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
                     </tr>
 
@@ -59,11 +59,14 @@
             <div class="container">
                  <h1>Edit User</h1>
             <p>
-               <form action="" method="post" accept-charset="utf-8" class="form-input">
-               
+               <form action="{{ action('Manage\UserController@updateUser') }}" method="post" accept-charset="utf-8" class="form-input">
+                 {!! csrf_field() !!}
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                  <div class="cell">
                     <label class="label-input"> ID :</label>
-                        <label class="label-input">   {{ $ur->id }}</label>                                                        
+                      <div class="input-control text">
+                             <input type="text"  name="id" value="{{ $ur->id }}" readonly>
+                        </div>                                                
                    </div> 
                 <div class="cell">
                     <label class="label-input"> Name</label>
@@ -105,18 +108,19 @@
                         </div>
                     <label class="label-input"> Address </label>
                     <div class="input-control text">
-                         <input type="text">
+                         <input type="text" name="address" value="{{ $ur->address }}">
                     </div>
                  </div>
                  <div class="cell">
                     <label class="label-input"> Sex</label>
                      <label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
+                     {{-- 0: nu      1: nam --}}
+                    <input type="radio" name="sex" checked="" value="1">
                       <span class="check"></span>
                     <span class="caption">Male</span>
                      </label>
                  <label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
+                    <input type="radio" name="sex" checked="" value="0">
                       <span class="check"></span>
                     <span class="caption">Female</span>
             </label>

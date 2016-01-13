@@ -61,11 +61,14 @@
             <div class="container">
                  <h1>Edit Guest</h1>
             <p>
-               <form action="" method="post" accept-charset="utf-8" class="form-input">
-               
+               <form action="{{ action('Manage\GuestController@updateGuest')}}" method="post" accept-charset="utf-8" class="form-input">
+                 {!! csrf_field() !!}
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                  <div class="cell">
                     <label class="label-input"> ID :</label>
-                        <label class="label-input">   {{ $g->id }}</label>                                                        
+                        <div class="input-control text">
+                             <input type="text"  name="id" value="{{ $g->id}}" readonly>
+                        </div>                                                        
                    </div> 
                 <div class="cell">
                     <label class="label-input"> Name</label>
@@ -81,40 +84,41 @@
                  <div class="cell">
                      <label class="label-input"> Identify </label>
                         <div class="input-control text">
-                             <input type="text" value="{{ $g->identify }}">
+                             <input type="text" value="{{ $g->identify }}" name='identify'>
                         </div>
                     <label class="label-input"> Nationality</label>
                     <div class="input-control text">
-                         <input type="text" value="{{ $g->nationality }}">
+                         <input type="text" value="{{ $g->nationality }}" name='nationality'>
                     </div>
                  </div>
            
                  <div class="cell">
                      <label class="label-input"> Email </label>
                         <div class="input-control text">
-                             <input type="text" value="{{ $g->email }}">
+                             <input type="text" value="{{ $g->email }}" name='email'>
                         </div>
                     <label class="label-input"> Address </label>
                     <div class="input-control text">
-                         <input type="text">
+                         <input type="text" name="email" value="{{ $g->email }}">
                     </div>
                  </div>
                  <div class="cell">
                     <label class="label-input"> Sex</label>
                      <label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
+                     {{-- 1 = male,   2 = female --}}
+                    <input type="radio" name="sex" checked="" value="1"> 
                       <span class="check"></span>
                     <span class="caption">Male</span>
                      </label>
                  <label class="input-control radio small-check">
-                    <input type="radio" name="n3" checked="">
+                    <input type="radio" name="sex" checked="" value="2">
                       <span class="check"></span>
                     <span class="caption">Female</span>
             </label>
                  </div>
 
                 <input type="submit" class="button primary" name="" value="Save">
-                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogeditguest')" >
+                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogeditguest{{ $g->id }}')" >
             </form>
 
             </p>

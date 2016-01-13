@@ -36,8 +36,9 @@
                         <td>{{ $b->deposit }}</td>
                         <td>{{ $b->created_at }}</td>     
 						<td>{{ $b->checkout }}</td>  
+                        <td>fix later</td> 
 						<td>{{ $b->receiption }}</td> 
-						<td>fix later</td>  
+						 
                         <td>
                          <a href="javascript:;" onclick="showDialog('#dialog')" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
                           <a href=""> <span class="mif-cross" title="Delete"></span> </a> 

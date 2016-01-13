@@ -32,7 +32,13 @@ Route::group(['namespace' => 'Manage'], function(){
     Route::group(['prefix' => 'manage'], function () {
 
     	Route::get('listguest', 'GuestController@listGuest')->name('listguest_com');
+    	Route::post('updateguest', 'GuestController@updateGuest')->name('updateguest_com');
+
 	    Route::get('listuser', 'UserController@listUser')->name('listuser_com');
+	    Route::post('updateuser', 'UserController@updateUser')->name('updateuser_man');
+	    Route::get('deleteuser/{id}', 'UserController@deleteUser')->name('deleteuser_man');
+
+
 		Route::get('listroom', 'RoomController@listRoom')->name('listroom_com');
 		Route::get('listroomtype', 'RoomController@listRoomType')->name('listroomtype_com');
 		Route::match(array('GET', 'POST'), 'addroomtype', 'RoomController@createRoomType')->name('addroomtype_man');
@@ -60,6 +66,9 @@ Route::group(['namespace' => 'Manage'], function(){
 	    Route::post('bookingroom', 'ServiceController@bookingRoomPost')->name('bookingroom_rec_post');
 
 	    Route::get('checkout', 'ServiceController@checkout')->name('checkout_rec');
+	    Route::get('checkoutpreview/{room}', 'CheckoutController@checkoutPreview')->name('checkoutpreview_rec');
+	    Route::post('addcheckout', 'CheckoutController@addCheckout')->name('addcheckout_rec');
+
 
 	});
 	

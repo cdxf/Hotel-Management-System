@@ -5,7 +5,7 @@
 @section('content')
 	
 
-	<form action="{{ route('adduser_man_post') }}" method="post" accept-charset="utf-8" class="form-input">
+	<form action="{{ route('adduser_man') }}" method="post" accept-charset="utf-8" class="form-input">
             {!! csrf_field() !!}
 
 		<div class="cell">
