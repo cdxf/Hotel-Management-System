@@ -49,56 +49,31 @@ class RoomController extends Controller
             RoomType::create($roomtype);
             return redirect()->route('listroomtype_com');     
     }
+    public function updateRoom(Request $request){ 
+            $room = new Room;
+            $room = $request->except('_token');
+             //var_dump($room);die();
+            Room::where('id', $room['id'])->update($room);
+            return redirect()->route('listroom_com');
 
-   
-    public function store(Request $request)
-    {
-        //
     }
+    public function updateRoomType(Request $request){ 
+            $roomtype = new RoomType;
+            $roomtype = $request->except('_token');
+            RoomType::where('id',$roomtype['id'])->update($roomtype);
+            return redirect()->route('listroomtype_com');     
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
+    public function deleteRoom($id){
+        Room::where('id',$id)->delete();
+        return redirect()->route('listroom_com');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
+    public function deleteRoomType($id){
+        RoomType::where('id', $id)->delete();
+            return redirect()->route('listroomtype_com');     
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //update a room
-        
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
+    
 }

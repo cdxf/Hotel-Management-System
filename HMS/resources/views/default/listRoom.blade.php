@@ -49,23 +49,27 @@
 
                         <td>
                         <a href="" style="margin-right: 10px;"> <span class="mif-user" title="detail"></span> </a>
-                         <a href="javascript:;" onclick="showDialog('#dialogedituser{{ $r->id }}')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
-                          <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
+                         <a href="javascript:;" onclick="showDialog('#dialogeditroom{{ $r->id }}')"  style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
+                          <a href="{{ route('deleteroom_man', $r->id) }}" onclick="return confirm('are you sure delete this?')"> <span class="mif-cross" title="Delete"></span> </a> 
                         </td>
                     </tr>
 
 
 
                           {{-- area to display modal window edit room--}}
-         <div data-role="dialog" id="dialogedituser{{ $r->id }}" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
+         <div data-role="dialog" id="dialogeditroom{{ $r->id }}" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
             <div class="container">
                  <h1>Edit Room</h1>
             <p>
-               <form action="" method="post" accept-charset="utf-8" class="form-input">
-               
+               <form action="{{ action('Manage\RoomController@updateRoom') }}" method="post" accept-charset="utf-8" class="form-input">
+                {!! csrf_field() !!}
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                
                  <div class="cell">
                     <label class="label-input"> ID :</label>
-                        <label class="label-input">   {{ $r->id }}</label>                                                        
+                        <div class="input-control text">
+                       <input type="text"  name="id" value="{{ $r->id }}" readonly>
+                        </div>                                                     
                    </div> 
                 <div class="cell">
                     <label class="label-input"> Name</label>
@@ -84,12 +88,12 @@
                         </div> 
                      <label class="label-input"> RoomType </label>
                             <div class="input-control select">
-                                    <select>
+                                    <select name='room_type_id'>
                                     @foreach ($room_type as $r_type)
                                         @if ($r_type->id == $r->room_type_id)
-                                           <option selected> {{ $r_type->name }} </option>
+                                           <option selected value="{{ $r_type->id }}"> {{ $r_type->name }} </option>
                                              @else
-                                             <option> {{ $r_type->name }} </option>
+                                             <option value="{{ $r_type->id }}"> {{ $r_type->name }} </option>
 
                                         @endif
                                     @endforeach     
@@ -100,7 +104,7 @@
                  
                 
                 <input type="submit" class="button primary" name="" value="Save">
-                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogedituser{{ $r->id }}')" >
+                <input type="button" class="button warning" name="" value="Cancel" onclick="closeDialog('#dialogeditroom{{ $r->id }}')" >
             </form>
 
             </p>

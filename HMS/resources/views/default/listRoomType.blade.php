@@ -28,19 +28,22 @@
                         <td> {{ $type->price }}</td>                                   
                         <td>
                          <a href="javascript:;" onclick="showDialog('#dialog{{ $type->id }}')" style="margin-right: 10px;"> <span class="mif-pencil" title="edit"></span> </a>
-                          <a href=""> <span class="mif-cross" title="Delete"></span> </a> 
-                        </td>
+                         <a href="{{ route('deleteroomtype_man', $type->id) }}" onclick="return confirm('are you sure delete this?')"> <span class="mif-cross" title="Delete"></span> </a>
+                        
+                                                  </td>
                     </tr>
                       {{-- area for modal window update room type --}}
          <div data-role="dialog" id="dialog{{ $type->id }}" class="padding20 dialog" data-close-button="true" data-windows-style="true" style="left: 0px; right: 0px; width: auto; height: auto; visibility: visible; top: 282.5px;" data-overlay='true' data-overlay-color="modal">
          	<div class="container">
          		 <h1>Edit Room Type</h1>
 		    <p>
-		       <form action="" method="post" accept-charset="utf-8" class="form-input">
+		       <form action="{{ action('Manage\RoomController@updateRoomType') }}" method="post" accept-charset="utf-8" class="form-input">
+		        {!! csrf_field() !!}
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 		        <div class="cell">
 		        <label class="label-input"> ID </label>		                
 					<div class="input-control text">
-		                     <input type="text" value="{{ $type->id }}" readonly>
+		                     <input type="text" name='id' value="{{ $type->id }}" readonly>
 		                </div>    
 		            <label class="label-input"> NameType </label>
 		                <div class="input-control text">

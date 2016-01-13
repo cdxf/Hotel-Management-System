@@ -10,6 +10,8 @@ class Room extends Model
 	protected $primaryKey = 'id';
     protected $fillable = ['name','desc','room_type_id','phone'];
     protected $table = 'rooms';
+    
+ 
 
 	public function room_type(){
 		return $this->belongsTo('App\RoomType');

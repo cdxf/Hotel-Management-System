@@ -48,7 +48,12 @@ Route::group(['namespace' => 'Manage'], function(){
 	    
 
 	    Route::get('updateuser', 'UserController@updateuser')->name('updateuser_man');
-	    Route::get('updateroom', 'RoomController@updateRoom')->name('update_man');
+	    Route::post('updateroom', 'RoomController@updateRoom')->name('updateroom_man');
+	    Route::post('updateroomtype', 'RoomController@updateRoomType')->name('updateroomtype_man');
+
+	    Route::get('deleteroomtype/{id}', 'RoomController@deleteRoomType')->name('deleteroomtype_man');
+	    Route::get('deleteroom/{id}', 'RoomController@deleteRoom')->name('deleteroom_man');
+
 
 	    Route::get('listbooking', 'ServiceController@listBooking')->name('listbooking_com');
 	    Route::get('bookingroom/{name}', 'ServiceController@bookingRoomGet')->name('bookingroom_rec_get');
